@@ -11,8 +11,12 @@ export default {
 
     theme: {
         extend: {
+            colors: {
+                pink: "#FB657A",
+                heading: "#F14C4C",
+            },
             fontFamily: {
-                sans: ['Poppins',"Figtree", ...defaultTheme.fontFamily.sans],
+                sans: ["Poppins", "Figtree", ...defaultTheme.fontFamily.sans],
             },
         },
     },

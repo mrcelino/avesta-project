@@ -2,12 +2,12 @@
 
   <div class="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
 
-      <h2 class="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">Features</h2>
+      <h2 class="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">Mengapa memilih Avesta?</h2>
 
-      <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+      {{-- <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
           The product can personalize user experiences by understanding individual preferences and tailoring
           recommendations or content based on user behavior and historical data.
-      </p>
+      </p> --}}
 
   </div>
 

@@ -14,6 +14,10 @@ Route::view('profile', 'profile')
 
 Route::view('about', 'about');
 
+Route::view('regis', 'register');
+
+Route::view('login2', 'login');
+
 Route::get('/home', \App\Livewire\Home::class);
 
 require __DIR__.'/auth.php';
