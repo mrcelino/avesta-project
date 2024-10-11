@@ -14,6 +14,7 @@ export default {
             colors: {
                 pink: "#FB657A",
                 heading: "#F14C4C",
+                cInput:"#F4F4F4"
             },
             fontFamily: {
                 sans: ["Poppins", "Figtree", ...defaultTheme.fontFamily.sans],
@@ -21,5 +22,5 @@ export default {
         },
     },
 
-    plugins: [forms, require("rippleui")],
+    // plugins: [forms, require("rippleui")],
 };
