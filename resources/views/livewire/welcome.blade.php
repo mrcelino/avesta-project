@@ -1,4 +1,4 @@
-@extends('components.layouts.app') <!-- Pastikan nama folder dan file sesuai -->
+{{-- @extends('components.layouts.app') <!-- Pastikan nama folder dan file sesuai -->
 
 @section('title', 'Welcome Page') <!-- Judul halaman jika ingin diubah -->
 
@@ -6,4 +6,4 @@
 <div>
     <h1 class="text-xl">Hello, World!</h1> <!-- Contoh teks dengan kelas Tailwind -->
 </div>
-@endsection
+@endsection --}}

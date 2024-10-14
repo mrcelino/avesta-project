@@ -11,9 +11,7 @@
     @livewireStyles
 </head>
 <body>
-    <main>
-        @yield('content') <!-- Konten utama akan ditampilkan di sini -->
-    </main>
+    {{ $slot }}
     @livewireScripts
 </body>
 

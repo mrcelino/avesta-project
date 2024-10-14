@@ -30,6 +30,6 @@ export default {
     ],
     // DaisyUI configuration
     daisyui: {
-        themes: ["light", "dark", "cupcake"], // Menambahkan tema yang diinginkan
+        themes: ["light", "dark", "cupcake","cyberpunk"], // Menambahkan tema yang diinginkan
     },
 };

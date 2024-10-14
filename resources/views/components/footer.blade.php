@@ -20,10 +20,17 @@
             <div>
                 <p class="text-lg font-semibold mb-2">Ikuti Kami</p>
                 <div class="flex space-x-4">
-                    <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#">
+                        <img src="{{ asset('image/facebook.png') }}" alt="Facebook Icon" class="h-6 w-6"/>
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('image/twt.png') }}" alt="Twitter Icon" class="h-6 w-6"/>
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('image/instagram.png') }}" alt="Instagram Icon" class="h-6 w-6"/>
+                    </a>
                 </div>
+                
             </div>
         </div>
     </div>

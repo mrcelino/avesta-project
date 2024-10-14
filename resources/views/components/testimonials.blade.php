@@ -6,7 +6,7 @@
                 <img class="h-full w-full object-cover" src="{{ asset('image/Testi1.png') }}" alt="Gambar Toko 1">
             </div>
             <div class="w-2/3 p-8 flex flex-col"> <!-- Sisi Kanan: Konten -->
-                <p class="text-heading mt-12  text-xl">"Avesta benar-benar mempermudah hidup saya! Sekarang saya bisa mendapatkan ayam potong dengan harga terbaik tanpa harus keliling pasar."</p>
+                <p class="text-heading mt-12  text-xl">"Avesta benar-benar mempermudah hidup saya! Saya bisa mendapatkan ayam potong dengan harga terbaik tanpa harus keliling pasar."</p>
                 <h3 class="mt-32 text-heading font-bold text-2xl">Mila Suryani</h3>
                 <h3 class="mt-2 text-heading">Ibu Rumah Tangga</h3>
             </div>
