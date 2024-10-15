@@ -9,8 +9,8 @@
                     </div>
                 </div>
                 <div class="navbar-center ">
-                    <a href="#" class="font-bold text-lg mx-5 text-heading">Cari Daging</a>
-                    <a href="#" class="font-bold text-lg mx-5 text-heading">Cara Order</a>
+                    <a href="#meat" class="font-bold text-lg mx-5 text-heading">Cari Daging</a>
+                    <a href="#order" class="font-bold text-lg mx-5 text-heading">Cara Order</a>
                 </div>
                 <div class="navbar-end">
                   <x-navlink href="#">
@@ -54,12 +54,13 @@
                 </div>
             </div>
         </nav>
-        <main>
+        <main >
             <x-hero></x-hero>
+            <div id="meat"></div>
             <div class="mx-20">
                 <h2 class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-6xl my-20 mb-8 text-heading text-center">Yuk Cari Ayam Pilihanmu!</h2>
                 <div class="flex items-center justify-center mb-8">
-                    <div class="bg-white rounded-3xl border-2 shadow-xl p-8 w-full max-w-md">
+                    <div  class="bg-white rounded-3xl border-2 shadow-xl p-8 w-full max-w-md">
                         <h1 class="text-center text-pink-500 text-2xl font-bold mb-6">Cari Daging Sekarang</h1>
                         <div class="flex items-center space-x-2">
                             <input type="text" placeholder="Daging ayam" class="bg-gray-100 rounded-full px-4 py-2 text-gray-400 focus:outline-none flex-grow shadow-inner">
@@ -67,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-6 gap-4">
+                <div  class="grid grid-cols-6 gap-4">
                     <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110">
                         <img src="{{ asset('image/ayam1.png') }}" alt="Whole chicken" class="w-24 h-24 mb-2">
                         <p class="text-heading font-bold text-lg">Ayam Utuh</p>
@@ -93,6 +94,7 @@
                         <p class="text-heading font-bold text-lg">Jeroan</p>
                     </div>
                 </div>
+                <div id="order"></div>
                 <h2 class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-6xl my-20 text-heading text-center">Bagaimana Cara Pesan</h2>
                 <x-orderguide></x-orderguide>
                 <h2 class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-6xl my-20 text-heading text-center">Daftar Mitra Toko</h2>

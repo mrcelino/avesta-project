@@ -9,6 +9,7 @@
     <title>@yield('title', 'Avesta')</title>
     @vite('resources/css/app.css')
     @livewireStyles
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
     {{ $slot }}
