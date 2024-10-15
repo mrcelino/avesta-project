@@ -1,5 +1,5 @@
 <footer class="bg-pink py-8">
-    <div class="container mx-auto flex justify-between items-center text-white">
+    <div class="container mx-8 flex justify-between items-center text-white">
         <div>
             <img class="text-4xl font-bold mb-4" src="{{ asset('image/avesta2.png') }}"></img>
             <p class="text-lg font-medium">Jl. Yacaranda, Sekip Unit IV, Kec. Depok,<br>
