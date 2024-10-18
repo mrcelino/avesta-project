@@ -1,7 +1,7 @@
 <div>
     <div class="w-full gap-4 mx-auto mt-20 h-[415px] flex justify-center"> <!-- Flex row untuk card berdampingan -->
         <!-- Card 1 -->
-        <div class="border-2 rounded-3xl shadow-md overflow-hidden flex w-1/2 h-full">
+        <div data-aos="fade-right" data-aos-duration="1500" class="border-2 rounded-3xl shadow-md overflow-hidden flex w-1/2 h-full">
             <div class="w-1/3"> <!-- Sisi Kiri: Gambar -->
                 <img class="h-full w-full object-cover" src="{{ asset('image/Testi1.png') }}" alt="Gambar Toko 1">
             </div>
@@ -13,7 +13,7 @@
         </div>
     
         <!-- Card 2 -->
-        <div class="border-2 rounded-3xl shadow-md overflow-hidden flex w-1/2 h-full">
+        <div data-aos="fade-left" data-aos-duration="1500" class="border-2 rounded-3xl shadow-md overflow-hidden flex w-1/2 h-full">
             <div class="w-1/3"> <!-- Sisi Kiri: Gambar -->
                 <img class="h-full w-full object-cover" src="{{ asset('image/Testi2.png') }}" alt="Gambar Toko 2">
             </div>

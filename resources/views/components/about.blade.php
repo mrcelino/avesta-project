@@ -1,4 +1,4 @@
-<div class="w-full mx-auto mt-20 h-[374px] justify-center flex rounded-3xl overflow-hidden">
+<div data-aos="fade-up" data-aos-duration="1000" class="w-full mx-auto mt-20 h-[374px] justify-center flex rounded-3xl overflow-hidden">
   <!-- Left Section -->
   <div class="bg-pink w-4/6 p-8 flex flex-col justify-center">
       <h1 class="text-white font-bold mb-10 text-5xl">Avesta</h1>

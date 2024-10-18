@@ -17,3 +17,18 @@
     @apply bg-base-100
 } */
 
+@keyframes rotate {
+    0% {
+        transform: rotate(-5deg); /* Putar sedikit ke kiri */
+    }
+    50% {
+        transform: rotate(5deg); /* Putar sedikit ke kanan */
+    }
+    100% {
+        transform: rotate(-5deg); /* Kembali ke posisi awal */
+    }
+}
+
+.rotate-animation {
+    animation: rotate 2s infinite; /* Durasi 2 detik dan berulang tanpa henti */
+}

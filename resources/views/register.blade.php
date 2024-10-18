@@ -1,6 +1,6 @@
 <x-layouts.app>
     @section('title', 'Register')
-    <body class="bg-pink flex items-center justify-center min-h-screen text-black">
+    <body class="flex items-center justify-center min-h-screen text-black" style="background-image: url('/image/bghero.png');">
         <div class="bg-white rounded-3xl shadow-lg p-12 flex" style="width: 1000px">
             <div class="w-5/12 flex items-center justify-center rounded-3xl bg-[#F99BA9]">
                 <img alt="Illustration of two people shaking hands with documents flying around" class="rounded-lg p-10" height="400" src="{{ asset('image/register.png') }}" width="400"/>
@@ -15,18 +15,18 @@
                 </p>
                 <form wire:submit.prevent="register"> <!-- Tambahkan wire:submit.prevent -->
                     <div class="grid grid-cols-2 gap-4 mb-4">
-                        <input wire:model="first_name" class="border border-gray-300 rounded-2xl p-2 bg-cInput" placeholder="Nama Depan" type="text"/>
-                        <input wire:model="last_name" class="border border-gray-300 rounded-2xl p-2 bg-cInput" placeholder="Nama Belakang" type="text"/>
+                        <input wire:model="first_name" class="border border-gray-300 rounded-2xl p-p-3 pl-4 bg-cInput" placeholder="Nama Depan" type="text"/>
+                        <input wire:model="last_name" class="border border-gray-300 rounded-2xl p-3 pl-4 bg-cInput" placeholder="Nama Belakang" type="text"/>
                     </div>
                     <div class="grid grid-cols-2 gap-4 mb-4">
-                        <input wire:model="email" class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Email" type="email"/>
-                        <input wire:model="phone" class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Nomor HP" type="text"/>
+                        <input wire:model="email" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Email" type="email"/>
+                        <input wire:model="phone" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Nomor HP" type="text"/>
                     </div>
                     <div class="mb-4">
-                        <input wire:model="password" class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Sandi" type="password"/>
+                        <input wire:model="password" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Sandi" type="password"/>
                     </div>
                     <div class="mb-4">
-                        <input wire:model="password_confirmation" class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Konfirmasi Kata Sandi" type="password"/>
+                        <input wire:model="password_confirmation" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Konfirmasi Kata Sandi" type="password"/>
                     </div>
                     <div class="mb-4 mx-1 flex items-center">
                         <input class="mr-2" id="terms" type="checkbox"/>
@@ -34,13 +34,13 @@
                             Saya setuju dengan semua ketentuan dan kebijakan privasi
                         </label>
                     </div>
-                    <button class="bg-pink text-white rounded-2xl p-2 w-full font-medium" type="submit">
+                    <button class="bg-pink text-white rounded-2xl p-3 pl-4 w-full font-medium" type="submit">
                         Buat Akun
                     </button>
                 </form>
                 <p class="text-center text-sm mt-4">
                     Sudah punya akun?
-                    <a class="text-heading" href="#">
+                    <a wire:navigate class="text-heading" href="{{ route('login') }}">
                         Masuk
                     </a>
                 </p>

@@ -1,11 +1,11 @@
 <x-layouts.app>
     @section('title', 'Login')
-    <div class="bg-pink flex items-center justify-center min-h-screen text-black">
+    <div class="bg-pink flex items-center justify-center min-h-screen text-black" style="background-image: url('/image/bghero.png');">
         <div class="bg-white rounded-3xl shadow-lg p-12 flex" style="width: 1000px;">
             <div class="w-5/12 flex items-center justify-center rounded-3xl bg-[#F99BA9]">
                 <img alt="Illustration of two people shaking hands with documents flying around" class="rounded-lg p-4" height="400" src="{{ asset('image/login.png') }}" width="400"/>
             </div>
-            <div class="w-7/12 pl-8">
+            <div class="w-7/12 pl-10">
                 <img alt="Avesta logo" class="mb-4 mx-auto" height="40" src="{{ asset('image/avesta.png') }}" width="100"/>
                 <h1 class="text-2xl font-bold mb-2 text-center">
                     Yuk, Gabung dengan Avesta!
@@ -20,10 +20,10 @@
                         </div>
                     @endif
                     <div class="mb-4">
-                        <input wire:model="email" class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Email" type="email"/>
+                        <input wire:model="email" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Email" type="email"/>
                     </div>
                     <div class="mb-4">
-                        <input wire:model="password" class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Sandi" type="password"/>
+                        <input wire:model="password" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Sandi" type="password"/>
                     </div>
                     <div class="mb-4 mx-1 flex items-center">
                         <input class="mr-2" id="terms" type="checkbox"/>
@@ -31,13 +31,13 @@
                             Ingat saya
                         </label>
                     </div>
-                    <button class="bg-pink text-white rounded-2xl p-2 w-full font-medium" type="submit">
+                    <button class="bg-pink text-white rounded-3xl p-3 w-full font-medium" type="submit">
                         Login
                     </button>
                 </form>
                 <p class="text-center text-sm mt-40">
                     Belum punya akun?
-                    <a class="text-heading" href="#">
+                    <a wire:navigate class="text-heading" href="{{ route('register') }}">
                         Daftar
                     </a>
                 </p>
