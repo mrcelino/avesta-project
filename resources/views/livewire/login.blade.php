@@ -16,12 +16,19 @@
       <p class="mb-6 font-semibold text-center">
        Dapatkan harga ayam potong paling oke dan <br> rasakan mudahnya pesan online setiap hari!
       </p>
-      <form>
+      <form method="POST" action="{{ route('authenticate') }}">
+        @csrf
        <div class="mb-4">
-        <input class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Email" type="email"/>
+        <input class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Email" type="email" name="email" id="email"/>
+        @error('email')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
        </div>
        <div class="mb-4">
-        <input class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Sandi" type="password"/>
+        <input class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Sandi" type="password" name="password" id="password"/>
+        @error('password')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
        </div>
        <div class="mb-4 mx-1 flex items-center">
         <input class="mr-2" id="terms" type="checkbox"/>
@@ -35,7 +42,7 @@
       </form>
       <p class="text-center text-sm mt-40">
        Belum punya akun?
-       <a class="text-heading" href="#">
+       <a class="text-heading" href="register">
         Daftar
        </a>
       </p>

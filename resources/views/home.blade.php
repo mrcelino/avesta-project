@@ -10,10 +10,10 @@
         <x-navlink href="#about" wire:navigate>Tentang</x-navlink>
         <x-navlink href="#" wire:navigate>Hubungi</x-navlink>
         <div class="border rounded-3xl p-2 border-heading hover:bg-heading group mr-2">
-          <x-navlink href="login2" wire:navigate class="text-heading group-hover:text-white ">Login</x-navlink>
+          <x-navlink href="{{route('login')}}" wire:navigate class="text-heading group-hover:text-white ">Login</x-navlink>
         </div>
         <div class="rounded-3xl p-2 bg-heading text-white hover:bg-white group hover:border hover:border-heading">
-          <x-navlink href="regis" wire:navigate class="text-white group-hover:text-heading">Register</x-navlink>
+          <x-navlink href="{{route('register')}}" wire:navigate class="text-white group-hover:text-heading">Register</x-navlink>
         </div>
       </x-navmenu>
 </header>
