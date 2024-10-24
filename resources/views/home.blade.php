@@ -13,7 +13,6 @@
               <x-navlink href="{{ route('register') }}" :useWireNavigate="true" class="text-white group-hover:text-heading">Register</x-navlink>
             </div>
           </x-navmenu>
-          
     </header>
     <main id="main">
         {{-- Hero Section --}}

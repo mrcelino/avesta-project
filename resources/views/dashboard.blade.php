@@ -33,7 +33,9 @@
                         </x-button>
                       </x-slot:trigger>
                       <x-menu-item class="hover:bg-pink hover:text-white active:bg-heading" title="Riwayat Pembelian" />
+                      <x-menu-item class="hover:bg-pink hover:text-white  active:bg-heading" title="Pengaturan" />
                       <x-menu-item class="hover:bg-pink hover:text-white  active:bg-heading" title="Logout" />
+                      
                   </x-dropdown>
                   <x-dropdown>
                     <div class="bg-pink rounded-xl mt-2 mb-2 p-2">
