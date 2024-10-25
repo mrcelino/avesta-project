@@ -23,7 +23,7 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->brandLogo(asset('images/avesta.png'))
+            ->brandLogo(asset('image/avesta.png'))
             ->brandLogoHeight('3rem')
             ->default()
             ->id('admin')

@@ -1,9 +1,15 @@
 <?php
 
 use App\Http\Controllers\Home;
+use App\Livewire\About;
+use App\Livewire\Cariayam;
+use App\Livewire\Checkout;
+use App\Livewire\Contact;
+use App\Livewire\Dashboard;
+use App\Livewire\Emailverification;
+use App\Livewire\Forgotpassword;
 use App\Livewire\Login;
 use App\Livewire\Register;
-use App\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
@@ -24,6 +30,18 @@ use Illuminate\Support\Facades\Request;
 Route::get('/', [Home::class, 'index']);
 Route::get('/login', Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
+Route::get('/dashboard', Dashboard::class)->name('dashboard');
+Route::get('/forgotpassword', Forgotpassword::class)->name('forgotpassword');
+Route::get('/mitra', Mitra::class)->name('mitra');
+Route::get('/verification', Emailverification::class)->name('verification');
+Route::get('/resetpassword', Resetpassword::class)->name('resetpassword');
+Route::get('/cariayam', Cariayam::class)->name('cariayam');
+Route::get('/product', Product::class)->name('product');
+Route::get('/about', About::class)->name('about');
+Route::get('/checkout', Checkout::class)->name('checkout');
+Route::get('/contact', Contact::class)->name('contact');
+Route::get('/payment', Payment::class)->name('payment');
+Route::get('/detailspayment', Paymentdetails::class)->name('detailspayment');
 
 
 Route::middleware('guest')->group(function () {
