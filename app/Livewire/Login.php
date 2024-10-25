@@ -22,11 +22,19 @@ class Login extends Component
         $credentials = ['email' => $this->email, 'password' => $this->password];
 
         if (Auth::attempt($credentials)) {
-            session()->regenerate();
-            return redirect()->intended('/dashboard');
+            session()->regenerate(false);
+            return redirect()->intended('/dashboard'); // Redirect to dashboard after successful login.
         } else {
             session()->flash('error', 'Login gagal, email atau password salah.');
         }
+    }
+
+    public function logout()
+    {
+            Auth::logout();
+            session()->invalidate();
+            session()->regenerate();
+            return redirect()->route('login');
     }
 
     public function render()

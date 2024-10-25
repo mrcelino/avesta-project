@@ -1,8 +1,5 @@
-@extends('components.layouts.app') <!-- Pastikan nama folder dan file sesuai -->
-
-@section('title', 'Welcome Page') <!-- Judul halaman jika ingin diubah -->
-
-@section('content') <!-- Menyediakan konten untuk section content -->
+<x-layouts.app>
+    
 <header>
     <x-navmenu>
         <x-navlink href="#main" wire:navigate>Home</x-navlink>
@@ -133,8 +130,10 @@
         <x-testimonials></x-testimonials>
     </div>
     {{-- <x-faq></x-faq> --}}
-  </main>
-  <footer class="mt-12">
+</main>
+<footer class="mt-12">
     <x-footer></x-footer>
-  </footer>
-@endsection
+</footer>
+
+
+</x-layouts.app>
