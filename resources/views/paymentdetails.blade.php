@@ -6,10 +6,11 @@
                     <img class="navbar-item h-12 m-2 ml-4" src="{{ asset('image/avesta2.png') }}">
                 </div>
             </div>
+            @livewireStyles()
         </nav>
         <section class="items-center text-center pt-32">
             <h2 class="text-2xl font-semibold mb-2">Selesaikan pembayaran dalam</h2>
-            <p class="text-pink text-2xl font-medium mb-2">59:59</p>
+            <livewire:countdown-timer />
             <h2 class="text-xl font-medium mb-2">Batas Waktu Pembayaran</h2>
             <h2 class="text-xl font-semibold mb-2">Jumat, 27 September 2024 15.31</h2>
         </section>
@@ -33,9 +34,19 @@
             </div>
         </section>
         <section class="flex w-full max-w-2xl mx-auto rounded-xl mt-4 gap-2 mb-8">
-            <button class=" btn border-2 border-pink bg-white hover:bg-pink hover:text-white w-1/2 custom  text-pink font-semibold py-2 px-4 rounded-2xl">
+            
+            <button class=" btn border-2 border-pink bg-white hover:bg-pink hover:text-white w-1/2 custom  text-pink font-semibold py-2 px-4 rounded-2xl" onclick="my_modal_3.showModal()">
                 Cek Status Pembayaran
             </button>
+            <dialog id="my_modal_3" class="modal">
+                <div class="modal-box bg-pink min-w-">
+                  <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2">✕</button>
+                  </form>
+                  <h3 class="text-center text-3xl font-bold text-white mb-4">Pembayaran <br>Terkonfirmasi</h3>
+                  <img class="px-12 py-8 flex justify-center" src="{{ asset('image/success.png') }}">
+                </div>
+              </dialog>
             <button class=" btn w-1/2 bg-pink text-white  hover:bg-pink hover:text-white font-semibold py-2 px-4 rounded-2xl">
                 Belanja Lagi
             </button>
@@ -101,6 +112,6 @@
                 </x-slot:content>
             </x-collapse>
         </section>
-        
+        @livewireScripts()
     </div>
 </x-layouts.app>

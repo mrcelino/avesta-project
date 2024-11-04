@@ -23,7 +23,7 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->brandLogo(asset('image/avesta.png'))
+            ->brandLogo(asset('image/avesta2.png'))
             ->brandLogoHeight('3rem')
             ->default()
             ->id('admin')
@@ -55,6 +55,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->viteTheme('resources/css/filament/admin/theme.css');
     }
 }

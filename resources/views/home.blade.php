@@ -2,10 +2,10 @@
     @section('title', 'Avesta')
     <header>
         <x-navmenu>
-            <x-navlink href="#">Home</x-navlink>
-            <x-navlink href="">Produk</x-navlink>
-            <x-navlink href="#about">Tentang</x-navlink>
-            <x-navlink href="#footer">Hubungi</x-navlink>
+            <x-navlink href="{{ route('home') }}">Home</x-navlink>
+            <x-navlink href="{{ route('product') }}" :useWireNavigate="true" >Produk</x-navlink>
+            <x-navlink href="{{ route('about') }}" :useWireNavigate="true">Tentang</x-navlink>
+            <x-navlink href="{{ route('contact') }}" :useWireNavigate="true">Hubungi</x-navlink>
             <div class="border rounded-3xl p-2 border-heading hover:bg-heading group mr-2">
               <x-navlink href="{{ route('login') }}" :useWireNavigate="true" class="text-heading group-hover:text-white ">Login</x-navlink>
             </div>
@@ -18,7 +18,7 @@
         {{-- Hero Section --}}
         <x-hero></x-hero>
         {{-- Content --}}
-        <div class="mx-20">
+        <div class="mx-32">
             <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Mengapa memilih Avesta?</h2>
             <x-whyus></x-whyus>
             <x-about id=#about></x-about>
