@@ -33,8 +33,8 @@ class Login extends Component
     {
             Auth::logout();
             session()->invalidate();
-            session()->regenerate();
-            return redirect()->route('login');
+            session()->regenerateToken();
+            return redirect('/');
     }
 
     public function render()

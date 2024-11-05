@@ -29,6 +29,7 @@ class Register extends Component
             'password' => 'required|string|min:8|confirmed',
         ]);
 
+
         User::create([
             'nama_depan' => $this->nama_depan,
             'nama_belakang' => $this->nama_belakang,
@@ -43,7 +44,7 @@ class Register extends Component
         return redirect()->route('login');
     }
 
-    #[Layout('components.layouts.app')] 
+    #[Layout('components.layouts.app')]
     public function render()
     {
         return view('livewire.register');

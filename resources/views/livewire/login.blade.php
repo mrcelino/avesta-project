@@ -30,6 +30,9 @@
                 <label class="text-sm font-semibold" for="terms">
                     Ingat saya
                 </label>
+                <a wire:navigate class="text-heading" href="{{ route('forgotpassword') }}">
+                    Forget Password?
+                </a>
             </div>
             <button class="bg-pink text-white rounded-2xl p-2 w-full font-medium" type="submit" href="dashboard">
                 Login

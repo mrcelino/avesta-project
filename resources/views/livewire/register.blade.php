@@ -1,4 +1,4 @@
-<div class="bg-pink flex items-center justify-center min-h-screen text-black">
+<div class="flex items-center justify-center min-h-screen text-black" style="background-image: url('/image/bghero.png');">
     <div class="bg-white rounded-3xl shadow-lg p-12 flex" style="width: 1000px">
         <div class="w-5/12 flex items-center justify-center rounded-3xl bg-[#F99BA9]">
             <img alt="Illustration of two people shaking hands with documents flying around" class="rounded-lg p-10" height="400" src="{{ asset('image/register.png') }}" width="400" />
@@ -11,38 +11,25 @@
             <p class="mb-6 font-semibold text-center">
                 Dapatkan harga ayam potong paling oke dan <br>rasakan mudahnya pesan online setiap hari!
             </p>
-            <form wire:submit="register">
+            <form wire:submit.prevent="register">
                 <div class="grid grid-cols-2 gap-4 mb-4">
-                    <input class="border border-gray-300 rounded-2xl p-2 bg-cInput" placeholder="Nama Depan" type="text" wire:model="nama_depan" required />
-                    @error('nama_depan')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                    <input class="border border-gray-300 rounded-2xl p-2 bg-cInput" placeholder="Nama Belakang" type="text" wire:model="nama_belakang" required />
-                    @error('nama_belakang')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
+                    @error('nama_depan') <span class="error">{{ $message }}</span> @enderror
+                    <input wire:model="nama_depan" class="border border-gray-300 rounded-2xl p-p-3 pl-4 bg-cInput" placeholder="Nama Depan" type="text" />
+                    @error('nama_belakang') <span class="error">{{ $message }}</span> @enderror
+                    <input wire:model="nama_belakang" class="border border-gray-300 rounded-2xl p-3 pl-4 bg-cInput" placeholder="Nama Belakang" type="text" />
                 </div>
                 <div class="grid grid-cols-2 gap-4 mb-4">
-                    <input class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Email" type="email" wire:model="email" required />
-                    @error('email')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                    <input class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Nomor HP" type="text" wire:model="no_telepon" required />
-                    @error('no_telepon')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
+                    @error('email') <span class="error">{{ $message }}</span> @enderror
+                    <input wire:model="email" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Email" type="email" />
+                    @error('no_telepon') <span class="error">{{ $message }}</span> @enderror
+                    <input wire:model="no_telepon" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Nomor HP" type="text" />
                 </div>
                 <div class="mb-4">
-                    <input class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Sandi" type="password" wire:model="password" required />
-                    @error('password')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
+                    @error('password') <span class="error">{{ $message }}</span> @enderror
+                    <input wire:model="password" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Sandi" type="password" />
                 </div>
                 <div class="mb-4">
-                    <input class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Konfirmasi Kata Sandi" type="password" wire:model="password_confirmation" required />
-                    @error('password_confirmation')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
+                    <input wire:model="password_confirmation" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Konfirmasi Kata Sandi" type="password" />
                 </div>
                 <div class="mb-4 mx-1 flex items-center">
                     <input class="mr-2" id="terms" type="checkbox" />
@@ -50,22 +37,13 @@
                         Saya setuju dengan semua ketentuan dan kebijakan privasi
                     </label>
                 </div>
-                <button class="bg-pink text-white rounded-2xl p-2 w-full font-medium" type="submit">
+                <button class="bg-pink text-white rounded-2xl p-3 pl-4 w-full font-medium" type="submit">
                     Buat Akun
                 </button>
-                @if ($errors->any())
-                <div>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
             </form>
             <p class="text-center text-sm mt-4">
                 Sudah punya akun?
-                <a class="text-heading" href="login">
+                <a wire:navigate class="text-heading" href="{{ route('login') }}">
                     Masuk
                 </a>
             </p>
