@@ -8,12 +8,12 @@
             <div class="w-7/12 pl-10">
                 <img alt="Avesta logo" class="mb-4 mx-auto" height="40" src="{{ asset('image/avesta.png') }}" width="100"/>
                 <h1 class="text-2xl font-bold mb-2 text-center">
-                    Buat ulang kata sandi
+                    Lupa Password?
                 </h1>
                 <p class="mb-6 text-center">
-                    Masukkan kata sandi baru anda, pastikan terdiri lebih dari 8 karakter, terdapat angka dan simbol, dan uppercase. 
+                    Masukkan alamat email yang anda gunakan untuk menerima kode verifikasi.
                 </p>
-                <form wire:submit.prevent="login"> <!-- Menggunakan wire:submit.prevent untuk mencegah pengiriman form -->
+                <form wire:submit.prevent="submit"> <!-- Menggunakan wire:submit.prevent untuk mencegah pengiriman form -->
                     @if (session()->has('error'))
                         <div class="mb-4 text-red-600 text-center">
                             {{ session('error') }}
@@ -22,14 +22,8 @@
                     <div class="mb-4">
                         <input wire:model="email" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="E-mail" type="email"/>
                     </div>
-                    <div class="mb-4">
-                        <input wire:model="password" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Sandi" type="password"/>
-                    </div>
-                    <div class="mb-4">
-                        <input wire:model="password" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Konfirmasi kata sandi" type="password"/>
-                    </div>
-                    <button class="bg-pink text-white rounded-2xl p-3 w-full font-medium" type="submit">
-                        Buat ulang kata sandi
+                    <button class="bg-pink text-white rounded-2xl p-3 w-full font-medium" type="submit" href="emailverification">
+                        Selanjutnya
                     </button>
                 </form>
                 <p class="text-center text-sm mt-40">

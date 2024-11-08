@@ -1,14 +1,15 @@
+@props(['product'=>new \App\Models\Unggas()])
 <div class="bg-white rounded-2xl shadow-md border  p-4">
     <img alt="Image of raw chicken pieces on a wooden plate with some vegetables in the background" class="rounded-t-lg w-full" height="400" src="{{ asset('image/chicken.png') }}" width="600"/>
     <div class="p-4">
         <h2 class="text-lg font-semibold">
-        Ayam Utuh Siap Masak 900gr
+        {{ $product->jenis_unggas }}
         </h2>
         <p class="text-red-500 text-xl font-bold">
-        Rp.40.000
+        Rp.{{ number_format($product->harga_per_kg, 0, ',', '.') }}
         </p>
         <p class="text-gray-500">
-        Best Meat, Pogung
+        {{ $product->deskripsi }}
         </p>
     <div class="flex items-center text-gray-500 text-sm mt-2">
       <i class="fas fa-map-marker-alt text-red-500 mr-1">

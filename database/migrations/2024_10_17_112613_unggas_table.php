@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id_unggas');
             // $table->foreignId('id_warung')->constrained('warung')->onDelete('cascade')->onUpdate('cascade');
             $table->string('jenis_unggas', 50);
+            $table->text('deskripsi');
             $table->decimal('harga_per_kg', 10, 2);
             $table->timestamps();
         });

@@ -8,32 +8,29 @@
             <div class="w-7/12 pl-10">
                 <img alt="Avesta logo" class="mb-4 mx-auto" height="40" src="{{ asset('image/avesta.png') }}" width="100"/>
                 <h1 class="text-2xl font-bold mb-2 text-center">
-                    Masukkan kode verifikasi
+                    Buat ulang kata sandi
                 </h1>
                 <p class="mb-6 text-center">
-                    Kode verifikasi telah dikirim melalui e-mail ke
-                    s***a@g***.com.
+                    Masukkan kata sandi baru anda, pastikan terdiri lebih dari 8 karakter, terdapat angka dan simbol, dan uppercase. 
                 </p>
-                <form wire:submit.prevent="login"> <!-- Menggunakan wire:submit.prevent untuk mencegah pengiriman form -->
+                <form wire:submit.prevent="resetPassword"> <!-- Menggunakan wire:submit.prevent untuk mencegah pengiriman form -->
                     @if (session()->has('error'))
                         <div class="mb-4 text-red-600 text-center">
                             {{ session('error') }}
                         </div>
                     @endif
-                    <div class="flex space-x-5 justify-center mb-4">
-                        <input type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
-                        <input type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
-                        <input type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
-                        <input type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
-                        <input type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
-                        <input type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
+                    <div class="mb-4">
+                        <input wire:model="email" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="E-mail" type="email"/>
+                    </div>
+                    <div class="mb-4">
+                        <input wire:model="password" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Sandi" type="password"/>
+                    </div>
+                    <div class="mb-4">
+                        <input wire:model="password_confirmation" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Konfirmasi kata sandi" type="password"/>
                     </div>
                     <button class="bg-pink text-white rounded-2xl p-3 w-full font-medium" type="submit">
-                        Selanjutnya
+                        Buat ulang kata sandi
                     </button>
-                    <p class="mt-4 text-sm text-center">
-                        Mohon tunggu dalam <b>30 detik </b>untuk <span class="text-pink font-bold cursor-pointer">kirim ulang</span> kode.
-                    </p>
                 </form>
                 <p class="text-center text-sm mt-40">
                     Belum punya akun?

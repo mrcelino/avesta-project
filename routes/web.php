@@ -8,6 +8,7 @@ use App\Livewire\Contact;
 use App\Livewire\Dashboard;
 use App\Livewire\Emailverification;
 use App\Livewire\Forgotpassword;
+use App\Livewire\Resetpassword;
 use App\Livewire\Login;
 use App\Livewire\Register;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +48,8 @@ Route::middleware('guest')->group(function () {
     // Route::post('/authenticate', [Login::class, 'authenticate'])->name('authenticate');
 
     Route::get('/forgotpassword', Forgotpassword::class)->name('forgotpassword');
+    Route::get('/verification', Emailverification::class)->name('verification');
+    Route::get('/resetpassword', ResetPassword::class)->name('resetpassword');
 });
 
 Route::middleware('auth')->group(function () {
@@ -60,7 +63,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     
     // Route::get('/mitra', Mitra::class)->name('mitra');
-    // Route::get('/verification', Emailverification::class)->name('verification');
     // Route::get('/resetpassword', Resetpassword::class)->name('resetpassword');
     Route::get('/cariayam', Cariayam::class)->name('cariayam');
     // Route::get('/product', Product::class)->name('product');

@@ -14,6 +14,10 @@ class Forgotpassword extends Component
 
     public function submit()
     {
+        $this->validate([
+            'email' => 'required|email',
+        ]);
+
         $user = User::where('email', $this->email)->first();
         
         if (!$user) {
@@ -25,16 +29,17 @@ class Forgotpassword extends Component
         $expiry = Carbon::now()->addMinutes(30);
 
         ResetPasswordUser::updateOrCreate(
-            ['user_id' => $user->id_user],
+            ['id_user' => $user->id_user],
             ['token' => $token, 'tanggal_kadaluarsa' => $expiry, 'is_used' => false]
         );
 
-        // Mail::to($this->email)->send(new \App\Mail\ForgotPasswordMail($token));
+        Mail::to($this->email)->send(new \App\Mail\SendResetTokenMail($token));
 
         session()->flash('message', 'Token verifikasi telah dikirim.');
+        return redirect()->route('verification');
     }
     public function render()
     {
-        return view('forgotpassword');
+        return view('livewire.forgotpassword');
     }
 }

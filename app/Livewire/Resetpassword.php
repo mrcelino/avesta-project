@@ -11,43 +11,48 @@ use Carbon\Carbon;
 class Resetpassword extends Component
 {
     public $email;
-    public $token;
     public $password;
     public $password_confirmation;
 
     public function resetPassword()
     {
+        
+        $this->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8|confirmed',
+        ]);
+
         $user = User::where('email', $this->email)->first();
         
         if (!$user) {
             session()->flash('error', 'Email tidak ditemukan.');
             return;
         }
-
-        $resetRequest = ResetPassword::where('user_id', $user->id_user)
-            ->where('token', $this->token)
-            ->where('is_used', false)
+        
+        $resetRequest = ResetPasswordUser::where('id_user', $user->id_user)
+            ->where('is_used', true)
             ->where('tanggal_kadaluarsa', '>', Carbon::now())
             ->first();
-
+        
+        
         if (!$resetRequest) {
             session()->flash('error', 'Token tidak valid atau sudah kedaluwarsa.');
-            return;
+            return redirect()->route('verification');
         }
 
-        $this->validate([
-            'password' => 'required|min:8|confirmed',
-        ]);
-
+        // $this->validate([
+        //     'password' => 'required|min:8|confirmed',
+        // ]);
+        
         $user->update(['password' => Hash::make($this->password)]);
 
-        $resetRequest->update(['is_used' => true]);
+        $resetRequest->delete();
 
         session()->flash('message', 'Password berhasil diubah.');
         return redirect()->route('login');
     }
     public function render()
     {
-        return view('resetpassword');
+        return view('livewire.resetpassword');
     }
 }

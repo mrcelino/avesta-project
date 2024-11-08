@@ -21,9 +21,9 @@
             </div>
             <div class="mb-4">
                 <input class="border border-gray-300 rounded-2xl p-2 w-full bg-cInput" placeholder="Sandi" type="password" wire:model="password" required />
-                @error('password')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
+                @if (session()->has('error'))
+                <span class="text-danger">{{ session ('error') }}</span>
+                @endif
             </div>
             <div class="mb-4 mx-1 flex items-center">
                 <input class="mr-2" id="terms" type="checkbox" />

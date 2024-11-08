@@ -12,9 +12,10 @@ class ResetPasswordUser extends Model
     use HasFactory;
 
     protected $table = 'reset_password';
+    protected $primaryKey = 'id_reset_password';
 
     protected $fillable = [
-        'user_id',
+        'id_user',
         'token',
         'tanggal_kadaluarsa',
         'is_used',
@@ -27,7 +28,7 @@ class ResetPasswordUser extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id_user');
+        return $this->belongsTo(User::class, 'id_user', 'id_user');
     }
 
     public function isExpired()
