@@ -116,17 +116,9 @@
                         <span>Total Belanja</span>
                         <span class="font-bold">Rp.120.000</span>
                     </div>
-                    <select class="bg-pink text-white select select-bordered w-full rounded-2xl">
-                        <option disabled selected>Pilih Metode Pembayaran</option>
-                        <option>Mandiri Virtual Account</option>
-                        <option>BCA Virtual Account</option>
-                        <option>BRI Virtual Account</option>
-                        <option>BNI Virtual Account</option>
-                        <option>BSI Virtual Account</option>
-                        <option>Danamon Virtual Account</option>
-                      </select>
+                    @livewire('payment-method')
                 </div>
-                <button class="bg-pink text-white w-full py-2 mt-4 rounded-3xl font-semibold">Bayar</button>
+                {{-- <button class="bg-pink text-white w-full py-2 mt-4 rounded-3xl font-semibold">Bayar</button> --}}
             </div>
         </main>
         

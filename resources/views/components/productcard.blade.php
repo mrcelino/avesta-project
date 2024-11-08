@@ -19,7 +19,7 @@
       <span class="mx-1">
        •
       </span>
-      <span>
+      <span class="text-black">
        24 Terjual
       </span>
      </div>

@@ -59,7 +59,7 @@
         <main >
             <x-hero></x-hero>
             <div id="meat"></div>
-            <div class="mx-20">
+            <div class="mx-40">
                 <h2 class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-6xl my-20 mb-8 text-heading text-center">Yuk Cari Ayam Pilihanmu!</h2>
                 <div class="flex items-center justify-center mb-8">
                     <div  class="bg-white rounded-3xl border-2 shadow-xl p-8 w-full max-w-md">

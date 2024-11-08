@@ -16,7 +16,7 @@
             </x-navmenu>
         </header>
         <main>
-            <section class="bg-pink flex items-center justify-center min-h-[600px]" style="background-image: url('/image/bghero.png');">
+            <section class="bg-pink flex items-center justify-center min-h-[600px] bg-cover" style="background-image: url('/image/bghero.png');">
                 <div class="text-center text-white max-w-3xl mx-auto px-2 py-8">
                     <h1 class="text-6xl font-bold mb-6 mt-10">Avesta</h1>
                     <p class="text-lg leading-relaxed font-medium">

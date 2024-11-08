@@ -16,6 +16,7 @@ use App\Livewire\Pickup;
 use App\Livewire\Product;
 use App\Livewire\Purchasehistory;
 use App\Livewire\Resetpassword;
+use App\Livewire\Settings;
 use App\View\Components\aboutavesta;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,7 @@ Route::name('')->group(function() {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/forgotpassword', Forgotpassword::class)->name('forgotpassword');
     Route::get('/mitra', Mitra::class)->name('mitra');
+    Route::get('/settings', Settings::class)->name('settings');
     Route::get('/verification', Emailverification::class)->name('verification');
     Route::get('/resetpassword', Resetpassword::class)->name('resetpassword');
     Route::get('/cariayam', Cariayam::class)->name('cariayam');

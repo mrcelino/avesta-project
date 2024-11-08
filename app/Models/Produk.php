@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Karyawan extends Model
+class Produk extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama', 
-        'email',
-        'password', 
-        'nomor_hp',
-        'foto', // Tambahkan 'foto' ke dalam array fillable
+        'foto_produk',
+        'info_produk', 
+        'harga',
+        'stok',
+        'penjualan',
+
     ];
 }

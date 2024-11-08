@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('karyawans', function (Blueprint $table) {
+        Schema::create('produks', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            // $table->string('foto')->nullable();
-            $table->string('nomor_hp', 15)->nullable(); // Anda bisa mengatur panjangnya sesuai kebutuhan
-            $table->string('email');
-            $table->string('password');
+            $table->string('foto_produk')->nullable();
+            $table->string('info_produk');
+            $table->string('harga');
+            $table->integer('stok');
+            $table->integer('penjualan')->default(0);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('karyawans');
+        Schema::dropIfExists('produks');
     }
 };

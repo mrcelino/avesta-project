@@ -26,11 +26,13 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogo(asset('image/avesta2.png'))
             ->brandLogoHeight('3rem')
             ->default()
+            ->font('Poppins')
+            ->darkMode(false)
             ->id('admin')
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => '#FB657A',
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

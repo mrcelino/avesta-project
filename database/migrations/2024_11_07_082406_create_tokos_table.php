@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('karyawans', function (Blueprint $table) {
+        Schema::create('tokos', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            // $table->string('foto')->nullable();
-            $table->string('nomor_hp', 15)->nullable(); // Anda bisa mengatur panjangnya sesuai kebutuhan
-            $table->string('email');
-            $table->string('password');
+            $table->string('no_hp', 12);
+            $table->string('deskripsi');
+            $table->string('kelurahan');
+            $table->string('kecamatan');
+            $table->string('kota');
+            $table->integer('kode_pos');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('karyawans');
+        Schema::dropIfExists('tokos');
     }
 };

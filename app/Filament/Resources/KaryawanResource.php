@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Filament\Resources;
-
+use Illuminate\Support\Facades\Storage; // Tambahkan ini
 use App\Filament\Resources\KaryawanResource\Pages;
 use App\Filament\Resources\KaryawanResource\RelationManagers;
 use App\Models\Karyawan;
 use Filament\Forms;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
@@ -73,7 +75,15 @@ class KaryawanResource extends Resource
     {
         return $table
             ->columns([
-                // Kolom tabel bisa ditambahkan di sini
+                ImageColumn::make('foto')
+                ->width(100)
+                ->height(200)
+                ->label('Foto')
+                ->url(fn ($record) => Storage::url($record->foto)), // menggunakan Storage::url
+                TextColumn::make('nama'),
+                TextColumn::make('nomor_hp'),
+                TextColumn::make('email'),
+                TextColumn::make('password'),
             ])
             ->filters([
                 // Filter tabel bisa ditambahkan di sini

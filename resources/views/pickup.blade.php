@@ -26,14 +26,23 @@
             </div>
         </section>
         <section class="flex w-full max-w-2xl mx-auto rounded-xl mt-4 gap-2 mb-8">
-            <button class=" btn border-2 border-pink bg-white hover:bg-pink hover:text-white w-1/2 custom  text-pink font-semibold py-2 px-4 rounded-2xl">
+            <button class=" btn border-2 border-pink bg-white hover:bg-pink hover:text-white w-1/2 custom  text-pink font-semibold py-2 px-4 rounded-2xl" onclick="my_modal_3.showModal()">
                 Cek Status Pembayaran
             </button>
-            <button class=" btn w-1/2 bg-pink text-white  hover:bg-pink hover:text-white font-semibold py-2 px-4 rounded-2xl">
+            <dialog id="my_modal_3" class="modal">
+                <div class="modal-box bg-pink min-w-">
+                  <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2">✕</button>
+                  </form>
+                  <h3 class="text-center text-3xl font-bold text-white mb-4">Pengambilan<br>Terkonfirmasi</h3>
+                  <img class="px-12 py-8 flex justify-center" src="{{ asset('image/success.png') }}">
+                </div>
+            </dialog>
+            <a href="{{ route('dashboard') }}" class=" btn w-1/2 bg-pink text-white  hover:bg-pink hover:text-white font-semibold py-2 px-4 rounded-2xl">
                 Belanja Lagi
-            </button>
+            </a>
         </section>
-        <footer>
+        <footer class="mt-24"> 
             <x-footer></x-footer>
         </footer>
     </div>

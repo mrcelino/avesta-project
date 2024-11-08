@@ -17,6 +17,10 @@
     @apply bg-base-100
 } */
 
+#bank:hover{
+    @apply bg-white text-pink !important;
+  }
+
 @keyframes rotate {
     0% {
         transform: rotate(-5deg); /* Putar sedikit ke kiri */
