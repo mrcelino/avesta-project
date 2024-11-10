@@ -8,23 +8,32 @@
             <div class="w-7/12 pl-10">
                 <img alt="Avesta logo" class="mb-4 mx-auto" height="40" src="{{ asset('image/avesta.png') }}" width="100"/>
                 <h1 class="text-2xl font-bold mb-2 text-center">
-                    Lupa Password?
+                    Masukkan kode verifikasi
                 </h1>
                 <p class="mb-6 text-center">
-                    Masukkan alamat email yang anda gunakan untuk menerima kode verifikasi.
+                    Kode verifikasi telah dikirim melalui e-mail ke
+                    f****c*****@gmail.com
                 </p>
-                <form wire:submit.prevent="login"> <!-- Menggunakan wire:submit.prevent untuk mencegah pengiriman form -->
+                <form wire:submit.prevent="submit"> 
                     @if (session()->has('error'))
                         <div class="mb-4 text-red-600 text-center">
                             {{ session('error') }}
                         </div>
                     @endif
-                    <div class="mb-4">
-                        <input wire:model="email" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="E-mail" type="email"/>
+                    <div class="flex space-x-5 justify-center mb-4">
+                        <input wire:model="token_1" type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
+                        <input wire:model="token_2" type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
+                        <input wire:model="token_3" type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
+                        <input wire:model="token_4" type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
+                        <input wire:model="token_5" type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
+                        <input wire:model="token_6" type="text" maxlength="1" class="w-16 h-16 bg-cInput rounded-2xl text-center text-2xl" />
                     </div>
                     <button class="bg-pink text-white rounded-2xl p-3 w-full font-medium" type="submit">
                         Selanjutnya
                     </button>
+                    <p class="mt-4 text-sm text-center">
+                        Mohon tunggu dalam <b>30 detik </b>untuk <span class="text-pink font-bold cursor-pointer">kirim ulang</span> kode.
+                    </p>
                 </form>
                 <p class="text-center text-sm mt-40">
                     Belum punya akun?

@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Validator;
 
 use Livewire\Component;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
 class Login extends Component
 {
     public $email;
@@ -22,11 +25,11 @@ class Login extends Component
 
         if (Auth::attempt($credentials)) {
             session()->regenerate(false);
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/dashboard'); // Redirect to dashboard after successful login.
         } else {
             session()->flash('error', 'Login gagal, email atau password salah.');
         }
-        
+
     }
 
     public function logout()
@@ -36,6 +39,7 @@ class Login extends Component
             session()->regenerateToken();
             return redirect('/');
     }
+
     public function render()
     {
         return view('login');
