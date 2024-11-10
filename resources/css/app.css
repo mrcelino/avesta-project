@@ -17,6 +17,93 @@
     @apply bg-base-100
 } */
 
+/* Mengatur animasi untuk setiap baris */
+/* Baris pertama bergerak ke kiri */
+
+/* select:hover{
+  @apply bg-pink text-white !important
+}
+option:hover{
+  background-color: #F4F4F4 !important
+} */
+
+.no-active-effect {
+  outline: none; /* Menghilangkan outline saat elemen aktif */
+  box-shadow: none; /* Menghilangkan shadow saat elemen aktif */
+  border: none
+}
+
+.no-active-effect:focus {
+  outline: none; /* Menghilangkan outline saat elemen mendapatkan fokus */
+  border: none;
+  box-shadow: none; /* Menghilangkan shadow saat elemen mendapatkan fokus */
+}
+/* Add this to your custom CSS file or in the <style> section */
+.nav-link {
+    position: relative;
+  }
+  
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: width 500ms ease;
+    @apply bg-pink /* Pink color */
+
+  }
+  
+  .nav-link:hover::before {
+    width: 100%;
+  }
+  
+.left-slider {
+    display: flex;
+    width: 100%;
+    animation: scrollLeft 20s linear infinite;
+  }
+  
+  /* Baris kedua bergerak ke kanan */
+  .right-slider {
+    display: flex;
+    width: 100%;
+    animation: scrollRight 20s linear infinite;
+  }
+  
+  /* Animasi untuk scroll kiri */
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Animasi untuk scroll kanan */
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+
+  
+#bank:hover{
+    @apply bg-white text-pink !important;
+  }
+
 @keyframes rotate {
     0% {
         transform: rotate(-5deg); /* Putar sedikit ke kiri */
@@ -32,3 +119,4 @@
 .rotate-animation {
     animation: rotate 2s infinite; /* Durasi 2 detik dan berulang tanpa henti */
 }
+

@@ -1,4 +1,4 @@
-<section class="relative text-white overflow-hidden flex items-center justify-center" style="background-image: url('/image/bghero.png'); height: 820px;">
+<section class="relative text-white overflow-hidden flex items-center justify-center bg-cover" style="background-image: url('/image/bghero.png'); height: 820px;">
   <div class="absolute top-0 left-0 w-56 ">
     <img data-aos="fade-down-right" data-aos-duration="3000" src="{{ asset('image/hero1.png') }}" alt="Kiri Atas" class="w-full h-full object-cover">
   </div>

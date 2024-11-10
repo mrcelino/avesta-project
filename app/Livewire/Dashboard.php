@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
-
     public $user;
     public $nama_depan;
     public $nama_belakang;

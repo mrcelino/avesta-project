@@ -8,6 +8,6 @@ class Pickup extends Component
 {
     public function render()
     {
-        return view('livewire.pickup');
+        return view('pickup');
     }
 }

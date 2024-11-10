@@ -3,20 +3,20 @@
     <div>
         <header>
             <x-navmenu>
-                <x-navlink href="#">Home</x-navlink>
-                <x-navlink href="">Produk</x-navlink>
-                <x-navlink href="#about">Tentang</x-navlink>
-                <x-navlink href="#footer">Hubungi</x-navlink>
-                <div class="border rounded-3xl p-2 border-heading hover:bg-heading group mr-2">
-                <x-navlink href="{{ route('login') }}" :useWireNavigate="true" class="text-heading group-hover:text-white ">Login</x-navlink>
+                <x-navlink href="{{ route('home') }}" useWireNavigate="true" class="hover:text-heading nav-link pb-1">Home</x-navlink>
+                <x-navlink href="{{ route('product') }}" :useWireNavigate="true" class=" hover:text-heading nav-link pb-1">Produk</x-navlink>
+                <x-navlink href="{{ route('about') }}" :useWireNavigate="true" class=" text-heading border-b-4 border-pink  pb-1">Tentang</x-navlink>
+                <x-navlink href="{{ route('contact') }}" :useWireNavigate="true" class=" hover:text-heading nav-link pb-1">Hubungi</x-navlink>
+                <div class="cursor-pointer border rounded-3xl p-2 border-heading hover:bg-heading group mr-2">
+                    <x-navlink href="{{ route('login') }}" :useWireNavigate="true" class="text-heading group-hover:text-white hover:text-white">Login</x-navlink>
                 </div>
-                <div class="rounded-3xl p-2 bg-heading text-white hover:bg-white group hover:border hover:border-heading">
-                <x-navlink href="{{ route('register') }}" :useWireNavigate="true" class="text-white group-hover:text-heading">Register</x-navlink>
+                <div class="cursor-pointer rounded-3xl p-2 bg-heading text-white hover:bg-white group hover:border hover:border-heading">
+                    <x-navlink href="{{ route('register') }}" :useWireNavigate="true" class="text-white group-hover:text-heading">Register</x-navlink>
                 </div>
-            </x-navmenu>
+              </x-navmenu>  
         </header>
         <main>
-            <section class="bg-pink flex items-center justify-center min-h-[600px]" style="background-image: url('/image/bghero.png');">
+            <section class="bg-pink flex items-center justify-center min-h-[600px] bg-cover" style="background-image: url('/image/bghero.png');">
                 <div class="text-center text-white max-w-3xl mx-auto px-2 py-8">
                     <h1 class="text-6xl font-bold mb-6 mt-10">Avesta</h1>
                     <p class="text-lg leading-relaxed font-medium">

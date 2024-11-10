@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Livewire;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 use Livewire\Component;
 
@@ -27,6 +29,7 @@ class Login extends Component
         } else {
             session()->flash('error', 'Login gagal, email atau password salah.');
         }
+
     }
 
     public function logout()
@@ -39,6 +42,6 @@ class Login extends Component
 
     public function render()
     {
-        return view('livewire.login');
+        return view('login');
     }
 }
