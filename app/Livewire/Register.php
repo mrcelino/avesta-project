@@ -26,7 +26,6 @@ class Register extends Component
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        logger('Form validation passed.');
 
         User::create([
             'nama_depan' => $this->nama_depan,

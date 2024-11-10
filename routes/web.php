@@ -21,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 
-
 Route::get('/', [Home::class, 'index'])->name('home');
 Route::get('/product', Product::class)->name('product');
 Route::get('/about', About::class)->name('about');
