@@ -5,6 +5,10 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Livewire\Attributes\Layout;
+
 class Register extends Component
 {
     public $nama_depan;
@@ -26,8 +30,6 @@ class Register extends Component
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        logger('Form validation passed.');
-
         User::create([
             'nama_depan' => $this->nama_depan,
             'nama_belakang' => $this->nama_belakang,
@@ -41,8 +43,9 @@ class Register extends Component
         session()->flash('success', 'Registrasi berhasil, silakan login.');
         return redirect()->route('login');
     }
+
     public function render()
     {
-        return view('register');
+        return view('livewire.register');
     }
 }
