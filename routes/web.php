@@ -17,38 +17,40 @@ use App\Livewire\Product;
 use App\Livewire\Purchasehistory;
 use App\Livewire\Resetpassword;
 use App\Livewire\Settings;
-use App\View\Components\aboutavesta;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 
 
 Route::get('/', [Home::class, 'index'])->name('home');
+Route::get('/product', Product::class)->name('product');
+Route::get('/about', About::class)->name('about');
+Route::get('/contact', Contact::class)->name('contact');
+Route::get('/mitra', Mitra::class)->name('mitra');
 
-
-Route::name('')->group(function() {
+Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/register', Register::class)->name('register');
-    Route::get('/dashboard', Dashboard::class)->name('dashboard');
+
+    // Meng-handle penyimpanan data registrasi
+    // Route::post('/store', [Register::class, 'register'])->name('store');
+
+    // Meng-handle proses autentikasi login
+    // Route::post('/authenticate', [Login::class, 'authenticate'])->name('authenticate');
+
     Route::get('/forgotpassword', Forgotpassword::class)->name('forgotpassword');
-    Route::get('/mitra', Mitra::class)->name('mitra');
-    Route::get('/settings', Settings::class)->name('settings');
     Route::get('/verification', Emailverification::class)->name('verification');
+    Route::get('/resetpassword', ResetPassword::class)->name('resetpassword');
+});
+
+Route::middleware('auth')->group(function () {
+    // Menampilkan halaman dashboard setelah login
+    Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::get('/logout', [Login::class, 'logout'])->name('logout');
+    Route::get('/settings', Settings::class)->name('settings'); 
     Route::get('/resetpassword', Resetpassword::class)->name('resetpassword');
     Route::get('/cariayam', Cariayam::class)->name('cariayam');
-    Route::get('/product', Product::class)->name('product');
-    Route::get('/about', About::class)->name('about');
     Route::get('/checkout', Checkout::class)->name('checkout');
-    Route::get('/contact', Contact::class)->name('contact');
     Route::get('/payment', Payment::class)->name('payment');
     Route::get('/detailspayment', Paymentdetails::class)->name('detailspayment');
     Route::get('/history', Purchasehistory::class)->name('purchasehistory');

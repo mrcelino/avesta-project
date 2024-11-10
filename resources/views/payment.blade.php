@@ -36,22 +36,13 @@
                             <div class="flex-1 ml-4">
                                 <h3 class="font-bold">Ayam Utuh Siap Masak 900gr</h3>
                                 <p>Best Meat, Pagung</p>
-                                <div class="flex items-center mt-4">
+                                <div class="flex items-center mt-2 border rounded-xl font-medium w-full max-w-72 p-1">
                                     <img src="{{ asset('image/note.png') }}" alt="Note Icon" class="mr-2"/>
-                                    <button>Tambah Catatan</button>
+                                    <p>Dibagi menjadi 8 Potong</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="font-bold">Rp.40.000</p>
-                                <div class="flex items-center space-x-2 mt-2">
-                                    <button class="text-pink-500">
-                                        <i class="fas fa-minus-circle text-pink"></i>
-                                    </button>
-                                    <span>1</span>
-                                    <button class="text-pink-500">
-                                        <i class="fas fa-plus-circle text-pink"></i>
-                                    </button>
-                                </div>
+                                <p class="font-bold">2 x Rp.40.000</p>
                             </div>
                         </div>
                         
@@ -61,22 +52,9 @@
                             <div class="flex-1 ml-4">
                                 <h3 class="font-bold">Ayam Utuh Siap Masak 900gr</h3>
                                 <p>Best Meat, Pagung</p>
-                                <div class="flex items-center mt-4">
-                                    <img src="{{ asset('image/note.png') }}" alt="Note Icon" class="mr-2"/>
-                                    <button>Tambah Catatan</button>
-                                </div>
                             </div>
                             <div class="text-right">
-                                <p class="font-bold">Rp.40.000</p>
-                                <div class="flex items-center space-x-2 mt-2">
-                                    <button class="text-pink-500">
-                                        <i class="fas fa-minus-circle text-pink"></i>
-                                    </button>
-                                    <span>1</span>
-                                    <button class="text-pink-500">
-                                        <i class="fas fa-plus-circle text-pink"></i>
-                                    </button>
-                                </div>
+                                <p class="font-bold">1 x Rp.40.000</p>
                             </div>
                         </div>
                         
@@ -86,22 +64,9 @@
                             <div class="flex-1 ml-4">
                                 <h3 class="font-bold">Ayam Utuh Siap Masak 900gr</h3>
                                 <p>Best Meat, Pagung</p>
-                                <div class="flex items-center mt-4">
-                                    <img src="{{ asset('image/note.png') }}" alt="Note Icon" class="mr-2"/>
-                                    <button>Tambah Catatan</button>
-                                </div>
                             </div>
                             <div class="text-right">
-                                <p class="font-bold">Rp.40.000</p>
-                                <div class="flex items-center space-x-2 mt-2">
-                                    <button class="text-pink-500">
-                                        <i class="fas fa-minus-circle text-pink"></i>
-                                    </button>
-                                    <span>1</span>
-                                    <button class="text-pink-500">
-                                        <i class="fas fa-plus-circle text-pink"></i>
-                                    </button>
-                                </div>
+                                <p class="font-bold">2 x Rp.40.000</p>
                             </div>
                         </div>
                     </div>
@@ -118,7 +83,6 @@
                     </div>
                     @livewire('payment-method')
                 </div>
-                {{-- <button class="bg-pink text-white w-full py-2 mt-4 rounded-3xl font-semibold">Bayar</button> --}}
             </div>
         </main>
         

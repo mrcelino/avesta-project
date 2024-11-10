@@ -47,7 +47,7 @@
                 Cek Status Pembayaran
             </button>
             <dialog id="my_modal_3" class="modal">
-                <div class="modal-box bg-pink min-w-">
+                <div class="modal-box bg-pink">
                   <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2">✕</button>
                   </form>

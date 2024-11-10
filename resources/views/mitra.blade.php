@@ -15,16 +15,10 @@
       </x-navmitra>
     </header>
     <main>
-      <div class="bg-left bg-no-repeat min-h-screen bg-cover" style="background-image: url('/image/mitrahero.png');">
-        <div class="flex items-center justify-center h-screen">
-          <h1 class="text-5xl md:text-6xl font-bold text-white text-center mb-6 leading-10">
-            Temukan Ayam Potong <br>dengan Harga Terbaik di Avesta
-          </h1>
-        </div>
-        
+      <div class="bg-no-repeat min-h-[480px] bg-contain mb-20" style="background-image: url('/image/mitrabg.png');">        
       </div>
-      <div class="mx-40">
-        <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Mengapa Bergabung dengan kami?</h2>
+      <div class="mx-48">
+        <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl mb-20 text-heading text-center">Mengapa Bergabung dengan kami?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
             <div class="bg-white p-4 rounded-2xl mr-4">
@@ -67,58 +61,38 @@
         <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Cara Kerja</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div data-aos="zoom-in" data-aos-duration="3000" class="bg-pink text-white rounded-3xl p-6 flex flex-col items-center h-[415px]">
-             <img alt="Person with magnifying glass searching on a computer screen" class="p-4 mt-16 w-full h-auto object-contain" height="150" src="{{ asset('image/order1.png') }}" width="150"/>
+             <img alt="Person with magnifying glass searching on a computer screen" class="p-4 mt-16 w-full h-auto object-contain" height="150" src="{{ asset('image/guidemitra1.png') }}" width="150"/>
              <div class="mt-auto flex items-center justify-center bg-white text-pink rounded-full px-4 py-2 font-bold w-52">
                 <div class="flex items-center justify-center bg-pink text-white rounded-full w-8 h-8 mr-2">
                    <span class="font-bold">1</span>
                 </div>
-                Cari Toko
+                Daftar
              </div>
           </div>
           <div data-aos="zoom-in" data-aos-duration="3000" class="bg-pink text-white rounded-3xl p-6 flex flex-col items-center">
-             <img alt="Person selecting items on a computer screen" class="p-4 mt-16 w-full h-auto object-contain" height="150" src="{{ asset('image/order2.png') }}" width="150"/>
+             <img alt="Person selecting items on a computer screen" class="p-4 mt-16 w-full h-auto object-contain" height="150" src="{{ asset('image/guidemitra2.png') }}" width="150"/>
              <div class="mt-auto flex items-center justify-center bg-white text-pink rounded-full px-4 py-2 font-bold w-52">
                 <div class="flex items-center justify-center bg-pink text-white rounded-full w-8 h-8 mr-2">
                    <span class="font-bold">2</span>
                 </div>
-                Pilih Pesanan
+                Unggah Produk
              </div>
           </div>
           <div data-aos="zoom-in" data-aos-duration="3000" class="bg-pink text-white rounded-3xl p-6 flex flex-col items-center">
-             <img alt="Person holding a credit card with check marks" class="p-4 mt-20 w-full h-auto object-contain" src="{{ asset('image/order3.png') }}" width="150"/>
+             <img alt="Person holding a credit card with check marks" class="p-4 mt-20 w-full h-auto object-contain" src="{{ asset('image/guidemitra3.png') }}" width="150"/>
              <div class="mt-auto flex items-center justify-center bg-white text-pink rounded-full px-4 py-2 font-bold w-52">
                 <div class="flex items-center justify-center bg-pink text-white rounded-full w-8 h-8 mr-2">
                    <span class="font-bold">3</span>
                 </div>
-                Bayar Online
+                Mulai Jualan
              </div>
           </div>
         </div>
         <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Daftar Mitra Toko</h2>
         <x-brand></x-brand>
-        <div class="mt-14 flex items-center justify-center">
-          <div class="flex">
-           <img alt="A person in a white coat standing in a poultry farm with chickens in the background" class="rounded-xl w-1/2"  src="{{ asset('image/mitratestimonials.jpeg') }}"/>
-           <div class="ml-20 w-1/2">
-            <h2 class="text-3xl font-semibold text-pink mb-6">
-             Ingin Tahu Lebih Lanjut?
-            </h2>
-            <p class="text-pink mb-6 leading-loose">
-             Dapatkan informasi lebih lengkap dan mulailah manfaatkan layanan kami.
-            </p>
-            <div class="flex space-x-4">
-             <button class="bg-pink text-white font-semibold py-3 px-4 rounded-full">
-              Daftar Sekarang
-             </button>
-             <button class="border border-pink text-pink font-semibold py-2 px-4 rounded-full">
-              Lihat Selengkapnya
-             </button>
-            </div>
-           </div>
-          </div>
-         </div>
-         <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Daftar Mitra Toko</h2>
-         <x-testimonials></x-testimonials>
+        <x-mitracta></x-mitracta>
+        <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Daftar Mitra Toko</h2>
+        <x-testimonials></x-testimonials>
       </div>
     </main>
     <footer class="mt-14">
