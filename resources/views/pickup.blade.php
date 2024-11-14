@@ -15,14 +15,16 @@
         </section>
         <section class="bg-white p-4 max-w-2xl mx-auto rounded-xl shadow-md border mt-8 ">
             <h2 class="font-medium text-center text-xl mb-2">Alamat Pengambilan</h2>
-            <img class="mx-auto rounded-2xl" src="{{ asset('image/pogungstore.png') }}"/>
-            <div class="max-w-2xl shadow-md border border-gray-200 rounded-xl p-4 mt-5">
-                <h3 class="font-medium mb-2">
-                    Best Meat Pogung
-                </h3>
-                <p class="font-semibold">
-                    Jl. Pandega Marta Jl. Pogung Lor No.107, Pogung Kidul, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55284
-                </p>
+            <div class="shadow-md border border-gray-200 rounded-2xl">
+                <img class="mx-auto rounded-2xl p-4" src="{{ asset('image/pogungstore.png') }}"/>
+                <div class="max-w-2xl p-4">
+                    <h3 class="font-medium mb-2">
+                        Best Meat Pogung
+                    </h3>
+                    <p class="font-semibold">
+                        Jl. Pandega Marta Jl. Pogung Lor No.107, Pogung Kidul, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55284
+                    </p>
+                </div>
             </div>
         </section>
         <section class="flex w-full max-w-2xl mx-auto rounded-xl mt-4 gap-2 mb-8">
@@ -38,7 +40,7 @@
                   <img class="px-12 py-8 flex justify-center" src="{{ asset('image/success.png') }}">
                 </div>
             </dialog>
-            <a href="{{ route('dashboard') }}" class=" btn w-1/2 bg-pink text-white  hover:bg-pink hover:text-white font-semibold py-2 px-4 rounded-2xl">
+            <a wire:navigate href="{{ route('dashboard') }}" class=" btn w-1/2 bg-pink text-white  hover:bg-pink hover:text-white font-semibold py-2 px-4 rounded-2xl">
                 Belanja Lagi
             </a>
         </section>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Storage; // Tambahkan ini
 use App\Filament\Resources\KaryawanResource\Pages;
 use App\Filament\Resources\KaryawanResource\RelationManagers;
 use App\Models\Karyawan;
+use Filament\Tables\Actions\DeleteAction;
 use Filament\Forms;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
@@ -20,7 +21,7 @@ class KaryawanResource extends Resource
 {
     protected static ?string $model = Karyawan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-s-user-group';
 
     public static function form(Form $form): Form
     {
@@ -76,20 +77,24 @@ class KaryawanResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('foto')
-                ->width(100)
-                ->height(200)
+                ->width(50)
+                ->height(50)
+                ->circular()
                 ->label('Foto')
                 ->url(fn ($record) => Storage::url($record->foto)), // menggunakan Storage::url
                 TextColumn::make('nama'),
                 TextColumn::make('nomor_hp'),
                 TextColumn::make('email'),
                 TextColumn::make('password'),
+                
             ])
             ->filters([
                 // Filter tabel bisa ditambahkan di sini
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                DeleteAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

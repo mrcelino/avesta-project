@@ -22,8 +22,8 @@
                   Avesta memudahkan Anda mencari ayam potong dengan harga terbaik di desa <br>
                   Kami bermitra dengan penjual unggas terpilih untuk menawarkan harga yang kompetitif setiap hari.
               </p>
-              <div class="bg-white rounded-3xl border-2 shadow-xl p-8 w-full max-w-md">
-                <h1 class="text-center text-pink-500 text-2xl font-bold mb-6">Cari Daging Sekarang</h1>
+              <div class="bg-white mx-auto rounded-3xl border-2 shadow-xl p-8 w-full max-w-md">
+                <h1 class="text-center text-pink text-2xl font-bold mb-6">Cari Daging Sekarang</h1>
                 <form method="GET" action="{{ route('cariayam') }}">
                     <div class="flex items-center space-x-2">
                         <input type="text" wire:model="searchTerm" name="q" placeholder="Daging ayam" class="bg-gray-100 rounded-full px-4 py-2 text-gray-400 focus:outline-none flex-grow shadow-inner">

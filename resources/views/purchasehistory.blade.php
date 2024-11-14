@@ -35,8 +35,8 @@
                       </x-button>
                     <x-dropdown>
                         <div class="border-pink border-2 rounded-xl mt-2 mb-2 p-2">
-                            <p class="font-semibold text-lg text-pink">Sintya Marisca</p>
-                            <p class="text-base text-pink">sintyamarrisca@gmail.com</p>
+                            <p class="font-semibold text-lg text-pink">{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}</p>
+                            <p class="text-base text-pink">{{ Auth::user()->email }}</p>
                         </div>
                         <x-slot:trigger>
                             <x-button class="ml-5 btn-circle btn-outline bg-white stroke-none border-2 hover:bg-white border-white hover:border-white">

@@ -13,7 +13,7 @@
         </select>
     </div>
 
-    <button wire:click="pay" wire:navigate class="bg-pink text-white w-full py-2 mt-4 rounded-3xl font-semibold">
+    <button wire:navigate wire:click="pay" class="bg-pink text-white w-full py-2 mt-4 rounded-3xl font-semibold">
         Bayar
     </button>
 </section>

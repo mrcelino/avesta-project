@@ -1,5 +1,3 @@
-<x-layouts.app>
-    @section('title', 'Login')
     <div class="bg-pink flex items-center justify-center min-h-screen text-black" style="background-image: url('/image/bghero.png');">
         <div class="bg-white rounded-3xl shadow-lg p-12 flex" style="width: 1000px;">
             <div class="w-5/12 flex items-center justify-center rounded-3xl bg-[#F99BA9]">
@@ -35,4 +33,3 @@
             </div>
         </div>
     </div>
-</x-layouts.app>

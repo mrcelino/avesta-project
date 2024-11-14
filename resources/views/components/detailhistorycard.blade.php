@@ -13,7 +13,7 @@
     <p class="mt-6">Total Pembelian</p>
     <p class="text-lg font-semibold">Rp. 30.000</p>
     <div class="mt-2">
-      <button class="bg-pink text-white px-4 py-2 rounded-lg font-semibold">
+      <button wire:navigate href="dashboard" class="bg-pink text-white px-4 py-2 rounded-lg font-semibold">
         Beli Lagi
       </button>
     </div>

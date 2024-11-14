@@ -18,7 +18,7 @@
         {{-- Hero Section --}}
         <x-hero></x-hero>
         {{-- Content --}}
-        <div class="mx-20">
+        <div class="mx-16">
             <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Mengapa memilih Avesta?</h2>
             <x-whyus></x-whyus>
             <x-about id=#about></x-about>

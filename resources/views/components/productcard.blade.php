@@ -9,24 +9,24 @@
         Rp.{{ number_format($product->harga_per_kg, 0, ',', '.') }}
         </p>
         <p>
-        {{ $product->deskripsi }}
-        
+        {{ $product->warung->nama_warung ?? 'Nama warung tidak tersedia' }}
         </p>
 
         <div class="flex items-center text-sm mt-2">
             <i class="fas fa-map-marker-alt text-red-500 mr-1"></i>
             <span class="font-medium">0.28 km</span>
             <span class="mx-1">•</span>
-            <span class="text-black font-medium">24 Terjual</span>
+            <span class="text-black font-medium">{{ $product->penjualan}} Terjual</span>
         </div>
 
         <div class="flex items-center justify-between mt-4">
             <button 
                 class="bg-pink w-full text-white px-4 py-2 rounded-2xl font-bold hover:bg-pink" 
-                onclick="document.getElementById('my_modal_3').showModal()"
-            >
+                onclick="openModal('{{ $product->id }}', '{{ $product->jenis_unggas }}', '{{ number_format($product->harga_per_kg, 0, ',', '.') }}', '{{ $product->deskripsi }}', '{{ $product->warung->nama_warung ?? 'Nama warung tidak tersedia' }}', '{{ $product->penjualan }}', '{{ $product->stok }}')"
+                >
                 Pesan
             </button>
+        
         </div>
     </div>
 </div>
@@ -44,35 +44,44 @@
         <div class="flex border-2 border-slate-200 rounded-2xl p-4">
             <!-- Kolom Kiri: Gambar -->
             <div class="w-1/2">
-                <img alt="A plate of raw chicken pieces with some vegetables in the background" class="w-full h-full rounded-lg object-cover" src="{{ asset('image/chicken.png') }}"/>
+                <img alt="A plate of raw chicken pieces with some vegetables in the background" class="w-full h-full rounded-lg object-cover"/>
             </div>
             
             <!-- Kolom Kanan: Deskripsi dan Aksi -->
             <div class="ml-4 w-1/2 flex flex-col justify-between">
                 <div>
-                    <h2 class="text-lg font-semibold mb-2">
-                        Ayam Utuh Siap Masak 900gr
-                    </h2>
-                    <p class="font-normal">
-                        Ayam negeri utuh siap dimasak dengan berat 900gr
-                    </p>
-                    <p class="text-xl font-semibold mt-2 mb-2">
-                        Rp.40.000
-                    </p>
-                    <p>
-                        Best Meat, Pogung
-                    </p>
+                    <h2 class="text-lg font-semibold mb-2"></h2> <!-- Nama produk -->
+                    <p class="font-normal deskripsi"></p> <!-- Deskripsi produk -->
+                    <p class="text-xl font-semibold mt-2 mb-2 harga"></p> <!-- Harga produk -->
+                    <p class="warung"></p> <!-- Nama warung -->
                     <div class="flex items-center mt-1">
                         <i class="fas fa-map-marker-alt text-pink mr-1"></i>
-                        <span class="font-semibold">0.28 km • 24 Terjual</span>
+                        <span class="font-semibold">0.28 km <span class="penjualan"></span></span> <!-- Penjualan -->
                     </div>
-                    <p class="mt-1">Stok: 40</p>
+                    <p class="mt-1 stok"></p>
                 </div>
                 
                 <!-- Aksi -->
                 @livewire('product-counter')
-                <button class="bg-pink text-white w-full py-2 font-semibold rounded-2xl mt-4">Tambah ke keranjang</button>
+                <a wire:navigate href="/checkout" class="bg-pink text-white w-full py-2 font-semibold rounded-2xl mt-4 text-center">Tambah ke keranjang</a>
             </div>
         </div>
     </div>
 </dialog>
+
+
+<script>
+    function openModal(id, jenis_unggas, harga_per_kg, deskripsi, warung, penjualan, stok) {
+    // Update konten di dalam modal
+    document.querySelector('#my_modal_3 .modal-box img').src = '/image/chicken.png'; // Gambar dapat disesuaikan
+    document.querySelector('#my_modal_3 .modal-box h2').innerText = jenis_unggas;
+    document.querySelector('#my_modal_3 .modal-box .harga').innerText = 'Rp.' + harga_per_kg;
+    document.querySelector('#my_modal_3 .modal-box .deskripsi').innerText = deskripsi;
+    document.querySelector('#my_modal_3 .modal-box .warung').innerText = warung;
+    document.querySelector('#my_modal_3 .modal-box .stok').innerText = "Stok: " + stok;
+    document.querySelector('#my_modal_3 .modal-box .penjualan').innerText = penjualan + " Terjual";
+
+    // Buka modal
+    document.getElementById('my_modal_3').showModal();
+}
+</script>

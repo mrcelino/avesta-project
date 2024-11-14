@@ -52,38 +52,38 @@
             <div class="mx-20">
                 <h2 class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-6xl my-20 mb-8 text-heading text-center">Yuk Cari Ayam Pilihanmu!</h2>
                 <div  class="grid grid-cols-6 gap-4">
-                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110">
-                        <a href="{{ route('cariayam', ['q'=>'Ayam Utuh']) }}">
+                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110 cursor-pointer">
+                        <a wire:navigate href="{{ route('cariayam', ['q'=>'Ayam Utuh']) }}">
                             <img src="{{ asset('image/ayam1.png') }}" alt="Whole chicken" class="w-24 h-24 mb-2">
                             <p class="text-heading font-bold text-lg">Ayam Utuh</p>
                         </a>
                     </div>
-                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110">
-                        <a href="{{ route('cariayam', ['q'=>'Dada Ayam']) }}">
+                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110 cursor-pointer">
+                        <a wire:navigate href="{{ route('cariayam', ['q'=>'Dada Ayam']) }}">
                             <img src="{{ asset('image/ayam2.png') }}" alt="Chicken breast" class="w-24 h-24 mb-2">
                             <p class="text-heading font-bold text-lg">Dada Ayam</p>
                         </a>
                     </div>
-                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110">
-                        <a href="{{ route('cariayam', ['q'=>'Ceker Ayam']) }}">
+                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110 cursor-pointer">
+                        <a wire:navigate href="{{ route('cariayam', ['q'=>'Ceker Ayam']) }}">
                             <img src="{{ asset('image/ayam3.png') }}" alt="Chicken feet" class="w-24 h-24 mb-2">
                             <p class="text-heading font-bold text-lg">Ceker Ayam</p>
                         </a>
                     </div>
-                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110">
-                        <a href="{{ route('cariayam', ['q'=>'Sayap Ayam']) }}">
+                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110 cursor-pointer">
+                        <a wire:navigate href="{{ route('cariayam', ['q'=>'Sayap Ayam']) }}">
                             <img src="{{ asset('image/ayam4.png') }}" alt="Chicken wings" class="w-24 h-24 mb-2">
                             <p class="text-heading font-bold text-lg">Sayap Ayam</p>
                         </a>
                     </div>
-                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110">
-                        <a href="{{ route('cariayam', ['q'=>'Ayam Fillet']) }}">
+                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110 cursor-pointer">
+                        <a wire:navigate href="{{ route('cariayam', ['q'=>'Ayam Fillet']) }}">
                             <img src="{{ asset('image/ayam5.png') }}" alt="Chicken fillet" class="w-24 h-24 mb-2">
                             <p class="text-heading font-bold text-lg">Ayam Fillet</p>
                         </a>
                     </div>
-                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110">
-                        <a href="{{ route('cariayam', ['q'=>'Jeroan']) }}">
+                    <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110 cursor-pointer">
+                        <a wire:navigate href="{{ route('cariayam', ['q'=>'Jeroan']) }}">
                             <img src="{{ asset('image/ayam6.png') }}" alt="Chicken offal" class="w-24 h-24 mb-2">
                             <p class="text-heading font-bold text-lg">Jeroan</p>
                         </a>

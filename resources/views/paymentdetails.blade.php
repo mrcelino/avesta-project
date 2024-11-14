@@ -55,7 +55,7 @@
                   <img class="px-12 py-8 flex justify-center" src="{{ asset('image/success.png') }}">
                 </div>
             </dialog>
-            <a href="{{ route('dashboard') }}" class=" btn w-1/2 bg-pink text-white  hover:bg-pink hover:text-white font-semibold py-2 px-4 rounded-2xl">
+            <a wire:navigate href="{{ route('dashboard') }}" class=" btn w-1/2 bg-pink text-white  hover:bg-pink hover:text-white font-semibold py-2 px-4 rounded-2xl">
                 Belanja Lagi
             </a>
         </section>

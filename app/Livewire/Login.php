@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Validator;
 
 use Livewire\Component;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 
 class Login extends Component
 {

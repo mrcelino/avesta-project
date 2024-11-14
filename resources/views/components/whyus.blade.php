@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="bg-white p-4 rounded-2xl mr-4">
-            <img class="text-4xl object-cover" src="{{ asset('vector/Price.png') }}"></img>
+    <div class="bg-pink p-5 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
+        <div class="bg-white p-4 rounded-2xl flex items-center w-36 h-24 mr-4">
+            <img class="text-4xl mx-auto object-cover" src="{{ asset('vector/Price.png') }}"></img>
         </div>
         <div class="text-left">
             <h2 class="text-xl font-semibold text-white mb-2">Harga kompetitif</h2>
@@ -9,8 +9,8 @@
         </div>
     </div>
     <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="bg-white p-4 rounded-2xl mr-4">
-            <img class="text-4xl object-cover" src="{{ asset('vector/Secure.png') }}"></img>
+        <div class="bg-white p-4 rounded-2xl mr-4 flex items-center w-36 h-24">
+            <img class="text-4xl mx-auto object-cover" src="{{ asset('vector/Secure.png') }}"></img>
         </div>
         <div class="text-left">
             <h2 class="text-xl font-semibold text-white mb-2">Pembayaran Aman</h2>
@@ -18,8 +18,8 @@
         </div>
     </div>
     <div class= "bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="bg-white p-4 rounded-2xl mr-4">
-            <img class="text-4xl object-cover" src="{{ asset('vector/Quality.png') }}"></img>
+        <div class="bg-white p-4 rounded-2xl mr-4 flex items-center w-36 h-24">
+            <img class="text-4xl mx-auto object-cover" src="{{ asset('vector/Quality.png') }}"></img>
         </div>
         <div class="text-left">
             <h2 class="text-xl font-semibold text-white mb-2">Kualitas Terjamin</h2>
@@ -27,8 +27,8 @@
         </div>
     </div>
     <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="bg-white p-4 rounded-2xl mr-4">
-            <img class="text-4xl object-cover" src="{{ asset('vector/Easily.png') }}"></img>
+        <div class="bg-white p-4 rounded-2xl mr-4 flex items-center w-36 h-24">
+            <img class="text-4xl mx-auto object-cover" src="{{ asset('vector/Easily.png') }}"></img>
         </div>
         <div class="text-left">
             <h2 class="text-xl font-semibold text-white mb-2">Kemudahan Pemesanan</h2>
@@ -36,8 +36,8 @@
         </div>
     </div>
     <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="bg-white p-4 rounded-2xl mr-4">
-            <img class="text-4xl object-cover " src="{{ asset('vector/Pickup.png') }}"></img>
+        <div class="bg-white p-4 rounded-2xl mr-4 flex items-center w-36 h-24">
+            <img class="text-4xl mx-auto object-cover " src="{{ asset('vector/Pickup.png') }}"></img>
         </div>
         <div class="text-left" id="about">
             <h2 class="text-xl font-semibold text-white mb-2">Pengambilan Mandiri</h2>
@@ -45,8 +45,8 @@
         </div>
     </div>
     <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="bg-white p-4 rounded-2xl mr-4">
-            <img class="text-4xl object-cover " src="{{ asset('vector/Feedback.png') }}"></img>
+        <div class="bg-white p-4 rounded-2xl mr-4 flex items-center w-36 h-24">
+            <img class="text-4xl mx-auto object-cover " src="{{ asset('vector/Feedback.png') }}"></img>
         </div>
         <div class="text-left">
             <h2 class="text-xl font-semibold text-white mb-2">Ulasan Pelanggan</h2>

@@ -40,7 +40,7 @@
         }
 
         // Jalankan setiap 3 detik
-        setInterval(nextCard, 5000);
+        setInterval(nextCard, 4000);
     });
 </script>
 

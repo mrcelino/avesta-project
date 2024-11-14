@@ -14,46 +14,45 @@
         </div>
       </x-navmitra>
     </header>
-    <main>
-      <div class="bg-no-repeat min-h-[480px] bg-contain mb-20" style="background-image: url('/image/mitrabg.png');">        
-      </div>
+    <main class="pt-16">
+      <div class="bg-left-top bg-no-repeat h-[500px] bg-cover mb-20" style="background-image: url('/image/mitrabg.png');"></div>
       <div class="mx-48">
         <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl mb-20 text-heading text-center">Mengapa Bergabung dengan kami?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="bg-white p-4 rounded-2xl mr-4">
-              <img class="text-4xl object-cover" src="{{ asset('vector/Price.png') }}">
+            <div class="bg-white h-full p-4 rounded-2xl mr-4 flex items-center">
+              <img class="text-4xl object-cover " src="{{ asset('vector/Price.png') }}">
             </div>
             <div class="text-left">
-              <h2 class="text-xl font-semibold text-white mb-2">Harga kompetitif</h2>
-              <p class="text-white">Dapatkan informasi harga ayam potong dari berbagai penjual secara real-time.</p>
+              <h2 class="text-xl font-semibold text-white mb-2">Jangkauan Lebih Luas</h2>
+              <p class="text-white">Jangkau pelanggan di daerah Anda dengan lebih mudah.</p>
             </div>
           </div>
           <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="bg-white p-4 rounded-2xl mr-4">
-              <img class="text-4xl object-cover" src="{{ asset('vector/Price.png') }}">
+            <div class="bg-white w-24 h-full p-4 rounded-2xl mr-4 flex items-center">
+              <img class="text-4xl object-cover " src="{{ asset('vector/Price.png') }}">
             </div>
             <div class="text-left">
-              <h2 class="text-xl font-semibold text-white mb-2">Harga kompetitif</h2>
-              <p class="text-white">Dapatkan informasi harga ayam potong dari berbagai penjual secara real-time.</p>
+              <h2 class="text-xl font-semibold text-white mb-2">Pengelolaan yang Mudah</h2>
+              <p class="text-white">Atur produk, harga, dan pesanan Anda melalui sistem yang user-friendly.</p>
             </div>
           </div>
           <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="bg-white p-4 rounded-2xl mr-4">
-              <img class="text-4xl object-cover" src="{{ asset('vector/Price.png') }}">
+            <div class="bg-white w-24 h-full p-4 rounded-2xl mr-4 flex items-center">
+              <img class="text-4xl object-cover " src="{{ asset('vector/Price.png') }}">
             </div>
             <div class="text-left">
-              <h2 class="text-xl font-semibold text-white mb-2">Harga kompetitif</h2>
-              <p class="text-white">Dapatkan informasi harga ayam potong dari berbagai penjual secara real-time.</p>
+              <h2 class="text-xl font-semibold text-white mb-2">Pembayaran Praktis</h2>
+              <p class="text-white">Gunakan transfer manual untuk pembayaran langsung yang aman dan terpercaya.</p>
             </div>
           </div>
           <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="bg-white p-4 rounded-2xl mr-4">
-              <img class="text-4xl object-cover" src="{{ asset('vector/Price.png') }}">
+            <div class="bg-white h-full p-4 rounded-2xl mr-4 flex items-center">
+              <img class="text-4xl object-cover " src="{{ asset('vector/Price.png') }}">
             </div>
             <div class="text-left">
-              <h2 class="text-xl font-semibold text-white mb-2">Harga kompetitif</h2>
-              <p class="text-white">Dapatkan informasi harga ayam potong dari berbagai penjual secara real-time.</p>
+              <h2 class="text-xl font-semibold text-white mb-2">Dukungan Penuh</h2>
+              <p class="text-white">Tim kami siap membantu Anda kapan saja.</p>
             </div>
           </div>
         </div>

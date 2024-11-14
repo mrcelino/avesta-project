@@ -8,6 +8,7 @@ use App\Livewire\Dashboard;
 use App\Livewire\Emailverification;
 use App\Livewire\Forgotpassword;
 use App\Livewire\Login;
+use App\Livewire\Loginkaryawan;
 use App\Livewire\Register;
 use App\Livewire\Mitra;
 use App\Livewire\Payment;
@@ -30,6 +31,7 @@ Route::get('/mitra', Mitra::class)->name('mitra');
 Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/register', Register::class)->name('register');
+    Route::get('/securelogin', Loginkaryawan::class)->name('securelogin');
 
     // Meng-handle penyimpanan data registrasi
     // Route::post('/store', [Register::class, 'register'])->name('store');

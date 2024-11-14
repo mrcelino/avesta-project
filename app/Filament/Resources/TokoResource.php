@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\TokoResource\Pages;
 use App\Filament\Resources\TokoResource\RelationManagers;
-use App\Models\Toko;
+use App\Models\Warung;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
@@ -18,9 +18,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TokoResource extends Resource
 {
-    protected static ?string $model = Toko::class;
+    protected static ?string $model = Warung::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-s-building-storefront';
 
     public static function form(Form $form): Form
     {
@@ -60,7 +60,8 @@ class TokoResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('nama_warung')->label('Nama'),
+                Tables\Columns\TextColumn::make('alamat_warung')
             ])
             ->filters([
                 //

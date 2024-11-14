@@ -19,7 +19,7 @@
       >
         Lihat Detail Transaksi
       </button>
-      <button class="bg-pink text-white px-4 py-2 rounded-lg font-semibold">
+      <button wire:navigate href="dashboard" class="bg-pink text-white px-4 py-2 rounded-lg font-semibold">
         Beli Lagi
       </button>
     </div>

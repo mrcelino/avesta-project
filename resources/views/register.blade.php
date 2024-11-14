@@ -3,7 +3,7 @@
         <div class="w-5/12 flex items-center justify-center rounded-3xl bg-[#F99BA9]">
             <img alt="Illustration of two people shaking hands with documents flying around" class="rounded-lg p-10" height="400" src="{{ asset('image/register.png') }}" width="400" />
         </div>
-        <div class="w-7/12 pl-8">
+        <div class="w-7/12 pl-16">
             <img alt="Avesta logo" class="mb-4 mx-auto" height="40" src="{{ asset('image/avesta.png') }}" width="100" />
             <h1 class="text-2xl font-bold mb-2 text-center">
                 Yuk, Gabung dengan Avesta!
@@ -41,7 +41,7 @@
                     Buat Akun
                 </button>
             </form>
-            <p class="text-center text-sm mt-4">
+            <p class="text-center text-sm mt-10">
                 Sudah punya akun?
                 <a wire:navigate class="text-heading" href="{{ route('login') }}">
                     Masuk

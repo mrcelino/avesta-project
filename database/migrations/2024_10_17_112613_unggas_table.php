@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('unggas', function (Blueprint $table) {
             $table->id('id_unggas');
-            // $table->foreignId('id_warung')->constrained('warung')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('foto_produk')->nullable();
+            // $table->foreignId('id_warung')->constrained('warung', 'id_warung')->onDelete('cascade')->onUpdate('cascade');
             $table->string('jenis_unggas', 50);
             $table->text('deskripsi');
+            $table->integer('penjualan');
+            // $table->integer('stok');
             $table->decimal('harga_per_kg', 10, 2);
             $table->timestamps();
         });

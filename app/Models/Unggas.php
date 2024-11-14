@@ -11,5 +11,10 @@ class Unggas extends Model
 
     protected $table = 'unggas';
     protected $primaryKey = 'id_unggas';
-    protected $fillable = ['jenis_unggas', 'harga_per_kg', 'stok'];
+    protected $fillable = ['jenis_unggas', 'harga_per_kg', 'stok', 'penjualan', 'foto_produk'];
+
+    public function warung()
+    {
+        return $this->belongsTo(Warung::class, 'id_warung');
+    }
 }
