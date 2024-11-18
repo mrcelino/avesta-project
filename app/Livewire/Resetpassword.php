@@ -53,6 +53,6 @@ class Resetpassword extends Component
     }
     public function render()
     {
-        return view('livewire.resetpassword');
+        return view('resetpassword');
     }
 }

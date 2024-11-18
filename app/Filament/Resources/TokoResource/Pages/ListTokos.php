@@ -8,6 +8,7 @@ use Filament\Resources\Pages\ListRecords;
 
 class ListTokos extends ListRecords
 {
+    protected static ?string $title = 'Daftar Toko';
     protected static string $resource = TokoResource::class;
 
     protected function getHeaderActions(): array

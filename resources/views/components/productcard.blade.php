@@ -8,9 +8,9 @@
         <p class="text-xl font-bold">
         Rp.{{ number_format($product->harga_per_kg, 0, ',', '.') }}
         </p>
-        <p>
+        <a href="toko" wire:navigate>
         {{ $product->warung->nama_warung ?? 'Nama warung tidak tersedia' }}
-        </p>
+        </a>
 
         <div class="flex items-center text-sm mt-2">
             <i class="fas fa-map-marker-alt text-red-500 mr-1"></i>

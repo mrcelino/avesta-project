@@ -8,6 +8,7 @@ use Filament\Resources\Pages\EditRecord;
 
 class EditProduk extends EditRecord
 {
+    protected static ?string $title = 'Edit Produk';
     protected static string $resource = ProdukResource::class;
 
     protected function getHeaderActions(): array

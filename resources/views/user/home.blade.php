@@ -21,18 +21,18 @@
         <div class="mx-16">
             <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Mengapa memilih Avesta?</h2>
             <x-whyus></x-whyus>
-            <x-about id=#about></x-about>
+            <x-aboutus id=#about></x-aboutus>
             <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Bagaimana Cara Pesan?</h2>
             <x-orderguide></x-orderguide>
             <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Daftar Mitra Toko</h2>
             <x-brand></x-brand>
-            <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center ">Testimoni</h2>
+            <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading  text-center ">Testimoni</h2>
             <div data-aos="zoom-in" data-aos-duration="1000">
               @livewire('testimonialscard')
             </div>
         </div>
     </main>
-    <footer id="footer" class="mt-12">
+    <footer id="footer" class="mt-12 hidden md:block">
         <x-footer></x-footer>
     </footer>
 </x-layouts.app>

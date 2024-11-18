@@ -8,6 +8,6 @@ class Contact extends Component
 {
     public function render()
     {
-        return view('contact');
+        return view('user.contact');
     }
 }

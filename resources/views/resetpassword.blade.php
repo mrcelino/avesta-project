@@ -13,7 +13,7 @@
                 <p class="mb-6 text-center">
                     Masukkan kata sandi baru anda, pastikan terdiri lebih dari 8 karakter, terdapat angka dan simbol, dan uppercase. 
                 </p>
-                <form wire:submit.prevent="resetPassword"> <!-- Menggunakan wire:submit.prevent untuk mencegah pengiriman form -->
+                <form wire:submit.prevent="resetPassword"> 
                     @if (session()->has('error'))
                         <div class="mb-4 text-red-600 text-center">
                             {{ session('error') }}

@@ -19,7 +19,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class TokoResource extends Resource
 {
     protected static ?string $model = Warung::class;
-
+    protected static ?string $title = 'Toko';
+    protected ?string $heading = 'Toko';
+    protected static ?string $navigationLabel = 'Toko';
     protected static ?string $navigationIcon = 'heroicon-s-building-storefront';
 
     public static function form(Form $form): Form

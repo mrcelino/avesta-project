@@ -8,6 +8,7 @@ use Filament\Resources\Pages\EditRecord;
 
 class EditToko extends EditRecord
 {
+    protected static ?string $title = 'Edit Toko';
     protected static string $resource = TokoResource::class;
 
     protected function getHeaderActions(): array

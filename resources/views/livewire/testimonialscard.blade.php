@@ -4,7 +4,7 @@
             <!-- Loop untuk menampilkan setiap card -->
             @foreach ($cards as $card)
                 <div class="border-2 rounded-3xl shadow-md overflow-hidden flex w-1/2 h-full transition-all duration-500 ease-in-out transform">
-                    <div class="w-1/3">
+                    <div class="w-1/3 ">
                         <img class="h-full w-full object-cover transition-transform duration-500 ease-in-out" src="{{ asset($card['image']) }}" alt="Gambar Toko">
                     </div>
                     <div class="w-2/3 p-8 flex flex-col py-2">

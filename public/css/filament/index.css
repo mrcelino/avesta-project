@@ -1,6 +1,9 @@
-@import '/vendor/filament/filament/resources/css/theme.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/variants';
 
-@config 'tailwind.config.js';
+@import 'base.css';
 
 th{
   @apply bg-[#FB657A] !important

@@ -8,5 +8,6 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreatePesanan extends CreateRecord
 {
+    
     protected static string $resource = PesananResource::class;
 }

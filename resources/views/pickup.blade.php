@@ -1,17 +1,13 @@
 <x-layouts.app>
     <div>
-        <nav class="relative">
-            <div class="navbar fixed mx-auto bg-pink shadow-md z-50">
-                <div class="navbar-start">
-                    <img class="navbar-item h-12 m-2 ml-4" src="{{ asset('image/avesta2.png') }}">
-                </div>
-            </div>
-        </nav>
+        <x-navbarclean></x-navbarclean>
         <section class="items-center text-center pt-32">
             <h2 class="text-2xl font-semibold mb-2">Ambil Pemesanan dalam</h2>
             <livewire:countdown-/>
             <h2 class="text-xl font-medium mb-2">Batas Waktu Pengambilan</h2>
-            <h2 class="text-xl font-semibold mb-2">Jumat, 27 September 2024 15.31</h2>
+            <h2 class="text-xl font-semibold mb-2">
+                {{ session('paymentDate') }} 
+            </h2>
         </section>
         <section class="bg-white p-4 max-w-2xl mx-auto rounded-xl shadow-md border mt-8 ">
             <h2 class="font-medium text-center text-xl mb-2">Alamat Pengambilan</h2>
@@ -29,7 +25,7 @@
         </section>
         <section class="flex w-full max-w-2xl mx-auto rounded-xl mt-4 gap-2 mb-8">
             <button class=" btn border-2 border-pink bg-white hover:bg-pink hover:text-white w-1/2 custom  text-pink font-semibold py-2 px-4 rounded-2xl" onclick="my_modal_3.showModal()">
-                Cek Status Pembayaran
+                Cek Status Pengambilan
             </button>
             <dialog id="my_modal_3" class="modal">
                 <div class="modal-box bg-pink">

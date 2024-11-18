@@ -8,6 +8,6 @@ class About extends Component
 {
     public function render()
     {
-        return view('about');
+        return view('user.about');
     }
 }

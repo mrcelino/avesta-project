@@ -1,23 +1,23 @@
 <x-layouts.app>
   <div>
     <header>
-      <x-navmitra>
-        <x-navlink href="#">Beranda</x-navlink>
-        <x-navlink href="{{ route('product') }}" :useWireNavigate="true">Dashboard</x-navlink>
-        <x-navlink href="{{ route('about') }}" :useWireNavigate="true">Tentang</x-navlink>
-        <x-navlink href="{{ route('contact') }}" :useWireNavigate="true">Hubungi</x-navlink>
-        <div class="border rounded-3xl p-2 border-heading hover:bg-heading group mr-2">
-          <x-navlink href="{{ route('login') }}" :useWireNavigate="true" class="text-heading group-hover:text-white">Login</x-navlink>
+      <x-navmenu>
+        <x-navlink href="{{ route('mitra') }}" useWireNavigate="true" class="text-heading pb-1 border-b-4 border-pink">Home</x-navlink>
+        <x-navlink href="/admin"  class=" hover:text-heading group nav-link pb-1">Dashboard</x-navlink>
+        <x-navlink href="{{ route('aboutmitra') }}" :useWireNavigate="true" class=" hover:text-heading group nav-link pb-1">Tentang</x-navlink>
+        <x-navlink href="{{ route('contactmitra') }}" :useWireNavigate="true" class=" hover:text-heading group nav-link pb-1">Hubungi</x-navlink>
+        <div class="cursor-pointer border rounded-3xl p-2 border-heading hover:bg-heading group mr-2">
+            <x-navlink href="{{ route('login') }}" :useWireNavigate="true" class="text-heading group-hover:text-white hover:text-white">Login</x-navlink>
         </div>
-        <div class="rounded-3xl p-2 bg-heading text-white hover:bg-white group hover:border hover:border-heading">
-          <x-navlink href="{{ route('register') }}" :useWireNavigate="true" class="text-white group-hover:text-heading">Register</x-navlink>
+        <div class="cursor-pointer rounded-3xl p-2 bg-heading text-white hover:bg-white group hover:border hover:border-heading">
+            <x-navlink href="{{ route('register') }}" :useWireNavigate="true" class="text-white group-hover:text-heading">Register</x-navlink>
         </div>
-      </x-navmitra>
+      </x-navmenu>    
     </header>
     <main class="pt-16">
-      <div class="bg-left-top bg-no-repeat h-[500px] bg-cover mb-20" style="background-image: url('/image/mitrabg.png');"></div>
+      <div class="bg-left-top bg-no-repeat h-[500px] bg-cover mb-16" style="background-image: url('/image/mitrabg.png');"></div>
       <div class="mx-48">
-        <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl mb-20 text-heading text-center">Mengapa Bergabung dengan kami?</h2>
+        <h2 class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl mb-20 text-heading text-center">Mengapa Bergabung dengan kami?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-pink p-6 rounded-3xl shadow-md flex items-center" data-aos="zoom-in" data-aos-duration="1500">
             <div class="bg-white h-full p-4 rounded-2xl mr-4 flex items-center">
@@ -56,7 +56,7 @@
             </div>
           </div>
         </div>
-        <x-about></x-about>
+        <x-aboutus></x-aboutus>
         <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Cara Kerja</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div data-aos="zoom-in" data-aos-duration="3000" class="bg-pink text-white rounded-3xl p-6 flex flex-col items-center h-[415px]">
@@ -90,7 +90,7 @@
         <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Daftar Mitra Toko</h2>
         <x-brand></x-brand>
         <x-mitracta></x-mitracta>
-        <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Daftar Mitra Toko</h2>
+        <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Testimoni</h2>
         <x-testimonials></x-testimonials>
       </div>
     </main>

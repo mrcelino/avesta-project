@@ -8,6 +8,7 @@ use Filament\Resources\Pages\ListRecords;
 
 class ListProduks extends ListRecords
 {
+    protected static ?string $title = 'Daftar Produk';
     protected static string $resource = ProdukResource::class;
 
     protected function getHeaderActions(): array

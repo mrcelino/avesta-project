@@ -18,6 +18,7 @@ use App\Livewire\Product;
 use App\Livewire\Purchasehistory;
 use App\Livewire\Resetpassword;
 use App\Livewire\Settings;
+use App\Livewire\Toko;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
@@ -27,6 +28,10 @@ Route::get('/product', Product::class)->name('product');
 Route::get('/about', About::class)->name('about');
 Route::get('/contact', Contact::class)->name('contact');
 Route::get('/mitra', Mitra::class)->name('mitra');
+Route::view('/aboutmitra', 'mitra.aboutmitra')->name('aboutmitra');
+Route::view('/contactmitra', 'mitra.contactmitra')->name('contactmitra');
+Route::view('/productmitra', 'mitra.productmitra')->name('productmitra');
+Route::get('/toko', Toko::class)->name('toko');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)->name('login');

@@ -10,6 +10,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
+use Filament\Forms\Components\Section;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\DeleteAction;
@@ -21,37 +22,41 @@ class ProdukResource extends Resource
 {
     protected static ?string $navigationLabel = 'Produk';
     protected static ?string $model = Unggas::class;
-
+    protected static ?string $title = 'Produk';
     protected static ?string $navigationIcon = 'heroicon-s-square-3-stack-3d';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                FileUpload::make('foto_unggas')
-                ->label('Foto')
-                ->image() 
-                ->maxSize(2048) 
-                ->directory('uploads/fotos') 
-                ->required(), 
-                
-                TextInput::make('jenis_unggas')
-                ->label('Nama')
-                ->required(),
-                Forms\Components\TextInput::make('harga_per_kg')
-                    ->label('Harga')
-                    ->numeric()
+                Section::make('')
+                 ->schema([    
+                    TextInput::make('jenis_unggas')
+                    ->label('Nama')
                     ->required(),
+                    Forms\Components\TextInput::make('harga_per_kg')
+                        ->label('Harga')
+                        ->numeric()
+                        ->required(),
+                        
+                    Forms\Components\TextInput::make('stok')
+                        ->label('Stok')
+                        ->numeric()
+                        ->required(),
+                        
+                    Forms\Components\TextInput::make('penjualan')
+                        ->label('Penjualan')
+                        ->numeric()
+                        ->default(0), // Default 0
                     
-                Forms\Components\TextInput::make('stok')
-                    ->label('Stok')
-                    ->numeric()
-                    ->required(),
-                    
-                Forms\Components\TextInput::make('penjualan')
-                    ->label('Penjualan')
-                    ->numeric()
-                    ->default(0), // Default 0
+                    FileUpload::make('foto_unggas')
+                        ->label('Foto')
+                        ->columnSpanFull()
+                        ->image() 
+                        ->maxSize(2048) 
+                        ->directory('uploads/fotos') 
+                        ->required(), 
+                 ])->columns(2)
             ]);
     }
 

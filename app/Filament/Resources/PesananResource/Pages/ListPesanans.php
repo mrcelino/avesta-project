@@ -8,6 +8,7 @@ use Filament\Resources\Pages\ListRecords;
 
 class ListPesanans extends ListRecords
 {
+    protected static ?string $title = 'Daftar Pesanan';
     protected static string $resource = PesananResource::class;
 
     protected function getHeaderActions(): array

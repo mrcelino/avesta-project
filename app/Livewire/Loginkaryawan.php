@@ -8,6 +8,6 @@ class Loginkaryawan extends Component
 {
     public function render()
     {
-        return view('livewire.loginkaryawan');
+        return view('loginkaryawan');
     }
 }

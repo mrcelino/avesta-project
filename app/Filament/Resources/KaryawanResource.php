@@ -7,6 +7,7 @@ use App\Filament\Resources\KaryawanResource\RelationManagers;
 use App\Models\Karyawan;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Form;
@@ -26,51 +27,49 @@ class KaryawanResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Grid::make(2) 
-                ->schema([
+            Section::make('')
+                ->schema([    
+                    TextInput::make('nama')
+                        ->label('Nama')
+                        ->required(),
+    
+                    TextInput::make('nomor_hp')
+                        ->label('Nomor HP')
+                        ->numeric()
+                        ->tel()
+                        ->required()
+                        ->minLength(10)
+                        ->maxLength(15)
+                        ->placeholder('Contoh: 08123456789'),
+    
+                    TextInput::make('email')
+                        ->label('Email')
+                        ->email()
+                        ->required()
+                        ->placeholder('Contoh: budiono@example.com'),
+    
+                    TextInput::make('password')
+                        ->label('Password')
+                        ->password()
+                        ->required(),
+    
+                    TextInput::make('password_confirmation')
+                        ->label('Konfirmasi Kata Sandi')
+                        ->password()
+                        ->required()
+                        ->same('password') 
+                        ->dehydrated(false),
                     FileUpload::make('foto')
                         ->label('Foto Profil')
-                        ->image() 
-                        ->maxSize(2048) 
-                        ->directory('uploads/fotos') 
-                        ->required(), 
-                    
-                    Grid::make(1) 
-                        ->schema([
-                            TextInput::make('nama')
-                                ->label('Nama')
-                                ->required(),
-
-                            TextInput::make('nomor_hp')
-                                ->label('Nomor HP')
-                                ->required()
-                                ->numeric() 
-                                ->tel()      
-                                ->minLength(10) 
-                                ->maxLength(15) 
-                                ->placeholder('Contoh: 08123456789'),
-
-                            TextInput::make('email')
-                                ->label('Email')
-                                ->email()
-                                ->placeholder('Contoh: budiono@example.com')
-                                ->required(),
-
-                            TextInput::make('password')
-                                ->label('Password')
-                                ->password()
-                                ->required(),
-
-                            TextInput::make('password_confirmation')
-                                ->label('Konfirmasi Kata Sandi')
-                                ->password()
-                                ->required()
-                                ->same('password') 
-                                ->dehydrated(false), 
-                        ]),
-                ]),
+                        ->image()
+                        ->maxSize(2048)
+                        ->directory('uploads/fotos')
+                        ->required(),
+                ])
+                ->columns(2), // Mengatur semua elemen dalam satu kolom
         ]);
     }
+    
 
     public static function table(Table $table): Table
     {

@@ -8,6 +8,6 @@ class Mitra extends Component
 {
     public function render()
     {
-        return view('mitra');
+        return view('mitra.mitra');
     }
 }

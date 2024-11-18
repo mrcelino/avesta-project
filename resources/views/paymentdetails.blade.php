@@ -1,13 +1,6 @@
 <x-layouts.app>
     <div>
-        <nav class="relative">
-            <div class="navbar fixed mx-auto bg-pink shadow-md z-50">
-                <div class="navbar-start">
-                    <img class="navbar-item h-12 m-2 ml-4" src="{{ asset('image/avesta2.png') }}">
-                </div>
-            </div>
-            @livewireStyles()
-        </nav>
+        <x-navbarclean></x-navbarclean>
         <section class="items-center text-center pt-32">
             <h2 class="text-2xl font-semibold mb-2">Selesaikan pembayaran dalam</h2>
             <livewire:countdown-timer />
@@ -19,7 +12,7 @@
         <section class="bg-white p-4 max-w-2xl mx-auto rounded-xl shadow-md border">
             <h2 class="font-medium">
                 @if(session('selectedBank'))
-                    {{ session('selectedBank') }}
+                    {{ session('selectedBank') }} Virtual Account
                 @else
                     Pilih Metode Pembayaran
                 @endif
@@ -60,10 +53,10 @@
             </a>
         </section>
         <section class="max-w-2xl mx-auto">
-            <h2 class="text-2xl font-semibold text-center">Cara Pembayaran</h2>
+            <h2 class="text-2xl font-semibold text-center mb-10">Cara Pembayaran</h2>
             <x-collapse class="mb-4">
                 <x-slot:heading>
-                    <h2 class="text-base">ATM Mandiri</h2>
+                    <h2 class="text-base">ATM {{ session('selectedBank') }}</h2>
                 </x-slot:heading>
                 <x-slot:content>
                     <div>
@@ -79,10 +72,10 @@
             </x-collapse>
             <x-collapse class="mb-4">
                 <x-slot:heading>
-                    <h2 class="text-base">Livin Mandiri</h2>
+                    <h2 class="text-base">Aplikasi</h2>
                 </x-slot:heading>
                 <x-slot:content>
-                     1. Masukkan kartu ATM anda dan masukkan PIN anda<br>
+                    1. Masukkan kartu ATM anda dan masukkan PIN anda<br>
                     2. Pilih BAYAR/BELI > MULTI PAYMENT<br>
                     3. MASUKKAN kode perusahaan Avesta: 12345<br>
                     4. Masukkan Nomor Akun Virtual: 88998762134972432<br>
@@ -110,7 +103,7 @@
                     <h2 class="text-base">Teller Mandiri</h2>
                 </x-slot:heading>
                 <x-slot:content>
-                     1. Masukkan kartu ATM anda dan masukkan PIN anda<br>
+                    1. Masukkan kartu ATM anda dan masukkan PIN anda<br>
                     2. Pilih BAYAR/BELI > MULTI PAYMENT<br>
                     3. MASUKKAN kode perusahaan Avesta: 12345<br>
                     4. Masukkan Nomor Akun Virtual: 88998762134972432<br>

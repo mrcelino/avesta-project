@@ -3,10 +3,10 @@
     <div>
         <header>
             <x-navmenu>
-                <x-navlink href="{{ route('home') }}" useWireNavigate="true" class="hover:text-heading nav-link pb-1">Home</x-navlink>
-                <x-navlink href="{{ route('product') }}" :useWireNavigate="true" class=" text-heading border-b-4 border-pink  pb-1">Produk</x-navlink>
-                <x-navlink href="{{ route('about') }}" :useWireNavigate="true" class=" hover:text-heading nav-link pb-1">Tentang</x-navlink>
-                <x-navlink href="{{ route('contact') }}" :useWireNavigate="true" class=" hover:text-heading nav-link pb-1">Hubungi</x-navlink>
+                <x-navlink href="{{ route('mitra') }}" useWireNavigate="true" class="hover:text-heading nav-link pb-1">Home</x-navlink>
+                <x-navlink href="/admin" :useWireNavigate="true" class=" text-heading border-b-4 border-pink  pb-1">Dashboard</x-navlink>
+                <x-navlink href="{{ route('aboutmitra') }}" :useWireNavigate="true" class=" hover:text-heading nav-link pb-1">Tentang</x-navlink>
+                <x-navlink href="{{ route('contactmitra') }}" :useWireNavigate="true" class=" hover:text-heading nav-link pb-1">Hubungi</x-navlink>
                 <div class="cursor-pointer border rounded-3xl p-2 border-heading hover:bg-heading group mr-2">
                     <x-navlink href="{{ route('login') }}" :useWireNavigate="true" class="text-heading group-hover:text-white hover:text-white">Login</x-navlink>
                 </div>

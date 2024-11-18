@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Filament\Resources;
-
+use App\Filament\Widgets\BarChart;
 use App\Filament\Resources\DataResource\Pages;
 use App\Filament\Resources\DataResource\RelationManagers;
-use App\Models\Data;
+use App\Models\Unggas;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,8 +15,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class DataResource extends Resource
 {
-    protected static ?string $model = Data::class;
-    
+    protected static ?string $model = Unggas::class;
+    protected static ?string $title = 'Data';
+    protected static ?string $navigationLabel = 'Produk';
     protected static ?string $navigationIcon = 'heroicon-s-chart-bar';
 
     public static function form(Form $form): Form
@@ -42,8 +43,10 @@ class DataResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
+                ]), 
+            ])
+            
+            ;
     }
 
     public static function getRelations(): array
@@ -60,5 +63,11 @@ class DataResource extends Resource
             'create' => Pages\CreateData::route('/create'),
             'edit' => Pages\EditData::route('/{record}/edit'),
         ];
+    }
+    public static function getWidgets(): array
+    {
+    return [
+        BarChart::class,
+    ];
     }
 }
