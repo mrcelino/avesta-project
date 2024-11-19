@@ -10,7 +10,7 @@
             <x-navlink href="{{ route('login') }}" :useWireNavigate="true" class="text-heading group-hover:text-white hover:text-white">Login</x-navlink>
         </div>
         <div class="cursor-pointer rounded-3xl p-2 bg-heading text-white hover:bg-white group hover:border hover:border-heading">
-            <x-navlink href="{{ route('register') }}" :useWireNavigate="true" class="text-white group-hover:text-heading">Register</x-navlink>
+            <x-navlink href="{{ route('register', ['role' => 'user']) }}" :useWireNavigate="true" class="text-white group-hover:text-heading">Register</x-navlink>
         </div>
       </x-navmenu>    
     </header>

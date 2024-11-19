@@ -6,16 +6,35 @@
         <x-navlink href="{{ route('product') }}" :useWireNavigate="true">Dashboard</x-navlink>
         <x-navlink href="{{ route('about') }}" :useWireNavigate="true">Tentang</x-navlink>
         <x-navlink href="{{ route('contact') }}" :useWireNavigate="true">Hubungi</x-navlink>
+        @guest
         <div class="border rounded-3xl p-2 border-heading hover:bg-heading group mr-2">
           <x-navlink href="{{ route('login') }}" :useWireNavigate="true" class="text-heading group-hover:text-white">Login</x-navlink>
         </div>
         <div class="rounded-3xl p-2 bg-heading text-white hover:bg-white group hover:border hover:border-heading">
-          <x-navlink href="{{ route('register') }}" :useWireNavigate="true" class="text-white group-hover:text-heading">Register</x-navlink>
+          <x-navlink href="{{ route('register', ['role' => 'pemilik']) }}" :useWireNavigate="true" class="text-white group-hover:text-heading">Register</x-navlink>
         </div>
+        @endguest
+        @auth
+        <x-dropdown>
+            <div class="border-pink border-2 rounded-xl mt-2 mb-2 p-2">
+                <p class="font-semibold text-lg text-pink">{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}</p>
+                <p class="text-base text-pink">{{ Auth::user()->email }}</p>
+            </div>
+            <x-slot:trigger>
+              <x-button class="ml-5 btn-circle btn-outline group hover:bg-pink stroke-none border-2 border-heading hover:border-white">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FB657A" class="size-6 group-hover:fill-white">
+                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+                  </svg>                     
+              </x-button>
+            </x-slot:trigger>
+            <x-menu-item wire:navigate href="{{ route('settings') }}" class="hover:bg-pink hover:text-white active:bg-pink" title="Pengaturan" />
+            <x-menu-item wire:navigate href="{{route('logout')}}" class="hover:bg-pink hover:text-white active:bg-heading" title="Logout" />
+        </x-dropdown>
+        @endauth
       </x-navmitra>
     </header>
     <main>
-      <div class="bg-no-repeat min-h-[480px] bg-contain mb-20" style="background-image: url('/image/mitrabg.png');">        
+      <div class="bg-no-repeat min-h-[780px] bg-contain mb-20" style="background-image: url('/image/mitrabg.png');">        
       </div>
       <div class="mx-48">
         <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl mb-20 text-heading text-center">Mengapa Bergabung dengan kami?</h2>

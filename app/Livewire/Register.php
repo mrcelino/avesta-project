@@ -5,8 +5,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Layout;
 
 class Register extends Component
@@ -18,8 +16,12 @@ class Register extends Component
     public $alamat;
     public $password;
     public $password_confirmation;
-    public $role = 'user'; // Default role for new users
+    public $role; 
 
+    public function mount($role = 'user') // Default peran adalah 'user' jika tidak diberikan
+    {
+        $this->role = $role;
+    }
     public function register()
     {
         $this->validate([
@@ -37,12 +39,13 @@ class Register extends Component
             'no_telepon' => $this->no_telepon,
             'alamat' => $this->alamat ?? '',
             'password' => Hash::make($this->password),
-            'role' => 'user',
+            'role' => $this->role,
         ]);
 
         session()->flash('success', 'Registrasi berhasil, silakan login.');
         return redirect()->route('login');
     }
+    
 
     public function render()
     {

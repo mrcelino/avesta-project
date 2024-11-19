@@ -14,7 +14,7 @@ class Warung extends Model
     protected $fillable = ['nama_warung']; 
 
     
-    public function ungas()
+    public function unggas()
     {
         return $this->hasMany(Unggas::class, 'id_warung', 'id_warung'); 
     }

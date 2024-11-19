@@ -24,10 +24,12 @@
               </p>
               <div class="bg-white rounded-3xl border-2 shadow-xl p-8 w-full max-w-md mx-auto">
                 <h1 class="text-center text-pink text-2xl font-bold mb-6">Cari Daging Sekarang</h1>
-                <div class="flex items-center space-x-2">
-                    <input type="text" placeholder="Daging ayam" class="bg-gray-100 rounded-full px-4 py-2 text-gray-400 focus:outline-none flex-grow shadow-inner">
-                    <button class="bg-pink text-white rounded-full px-6 py-2 shadow-lg">Cari</button>
-                </div>
+                <form method="GET" action="{{ route('cariayam') }}">
+                  <div class="flex items-center space-x-2">
+                    <input type="text" wire:model="searchTerm" name="q" placeholder="Daging ayam" class="bg-gray-100 rounded-full px-4 py-2 text-gray-400 focus:outline-none flex-grow shadow-inner">
+                    <button type="submit" class="bg-pink text-white rounded-full px-6 py-2 shadow-lg">Cari</button>
+                  </div>
+                </form>
             </div>
           </div>
       </div>

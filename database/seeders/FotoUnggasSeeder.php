@@ -14,6 +14,7 @@ class FotoUnggasSeeder extends Seeder
     public function run(): void
     {
         $fotoUnggas = [
+            ['id_unggas' => 1, 'path' => 'images/chicken.png'],
             ['id_unggas' => 2, 'path' => 'images/chicken.png'],
             ['id_unggas' => 3, 'path' => 'images/chicken.png'],
             ['id_unggas' => 4, 'path' => 'images/chicken.png'],
@@ -41,7 +42,7 @@ class FotoUnggasSeeder extends Seeder
             ['id_unggas' => 26, 'path' => 'images/chicken.png'],
             ['id_unggas' => 27, 'path' => 'images/chicken.png'],
             ['id_unggas' => 28, 'path' => 'images/chicken.png'],
-            ['id_unggas' => 29, 'path' => 'images/chicken.png'],
+            
         ];
 
         foreach ($fotoUnggas as $foto) {

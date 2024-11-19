@@ -30,7 +30,7 @@ Route::get('/mitra', Mitra::class)->name('mitra');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)->name('login');
-    Route::get('/register', Register::class)->name('register');
+    Route::get('/register/{role?}', Register::class)->name('register');
 
     // Meng-handle penyimpanan data registrasi
     // Route::post('/store', [Register::class, 'register'])->name('store');
@@ -43,12 +43,13 @@ Route::middleware('guest')->group(function () {
     Route::get('/resetpassword', ResetPassword::class)->name('resetpassword');
 });
 
+
 Route::middleware('auth')->group(function () {
     // Menampilkan halaman dashboard setelah login
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/logout', [Login::class, 'logout'])->name('logout');
     Route::get('/settings', Settings::class)->name('settings'); 
-    Route::get('/resetpassword', Resetpassword::class)->name('resetpassword');
+    // Route::get('/resetpassword', Resetpassword::class)->name('resetpassword');
     Route::get('/cariayam', Cariayam::class)->name('cariayam');
     Route::get('/checkout', Checkout::class)->name('checkout');
     Route::get('/payment', Payment::class)->name('payment');

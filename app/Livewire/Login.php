@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Validator;
 
 use Livewire\Component;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 
 class Login extends Component
 {
@@ -25,7 +23,12 @@ class Login extends Component
 
         if (Auth::attempt($credentials)) {
             session()->regenerate(false);
-            return redirect()->intended('/dashboard'); // Redirect to dashboard after successful login.
+
+            if (Auth::user()->role === 'pemilik') {
+                return redirect()->to('/mitra'); 
+            } else {
+                return redirect()->to('/dashboard'); 
+            }
         } else {
             session()->flash('error', 'Login gagal, email atau password salah.');
         }

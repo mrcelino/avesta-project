@@ -17,14 +17,14 @@ class WarungSeeder extends Seeder
         DB::table('warung')->insert([
             [
                 'nama_warung' => 'Warung Ayam Sehat',
-                'alamat_warung' => 'Jl. Sehat No. 23, Yogyakarta',
-                'id_user' => 1, 
+                'alamat_warung' => 'Jl. Sehat No. 23, Pogung Baru, Mlati, Sleman Yogyakarta',
+                'id_user' => 2, 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'nama_warung' => 'Warung Ayam Sejahtera',
-                'alamat_warung' => 'Jl. Merdeka No. 14, Yogyakarta',
+                'alamat_warung' => 'Jl. Merdeka No. 14, Sendangadi, Mlati, Sleman, Yogyakarta',
                 'id_user' => 2, 
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
