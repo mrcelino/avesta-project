@@ -9,7 +9,9 @@
             </div>
             <div class="navbar-center w-[600px]">
                 <div class="bg-white flex px-4 py-3 rounded-full overflow-hidden w-full mx-auto">
-                    <input type="email" placeholder="Cari Ayam" class="w-full outline-none text-black text-sm" />
+                    <form  method="GET" action="{{ route('cariayam') }}" id="filter-form">
+                        <input type="text" name="q" value="{{request()->q??''}}" placeholder="Cari Ayam" class="w-full outline-none text-black text-sm" />
+                        </form>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px" class="fill-pink font-bold">
                         <path d="M190.707 180.101l-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z"></path>
                     </svg>
@@ -75,7 +77,25 @@
                             <p>{{ $item->unggas->warung->nama_warung }}</p>
                             <div class="flex items-center mt-4">
                                 <img src="{{ asset('image/note.png') }}" alt="Note Icon" class="mr-2" />
-                                <button wire:click="$set('catatan[{{ $item->id }}]', '{{ $item->catatan }}')">Tambah Catatan</button>
+                                <button onclick="document.getElementById('modal_{{ $item->id_keranjang }}').showModal()">
+                                {{ \Illuminate\Support\Str::limit($catatan[$item->id_keranjang] ?? 'Tambah Catatan', 100) }}
+                                </button>
+                                <dialog id="modal_{{ $item->id_keranjang }}" class="modal">
+                                    <div class="modal-box max-w-sm">
+                                    <textarea 
+                                        class="p-2 w-full min-h-14 border-2 rounded-2xl" 
+                                        placeholder="Tambah Catatan"
+                                        wire:model.defer="catatan.{{ $item->id_keranjang }}"
+                                    ></textarea>
+                                        <div class="modal-action">
+                                            <form method="dialog">
+                                            <!-- if there is a button, it will close the modal -->
+                                            <button onclick="document.getElementById('modal_{{ $item->id_keranjang }}').close()" class="btn hover:bg-white bg-white border-2 border-gray-200 text-black rounded-2xl">Batal</button>
+                                            <button wire:click="updateKeranjang({{ $item->id_keranjang }})" class="btn hover:bg-pink bg-pink text-white rounded-2xl">Tambah</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </dialog>
                             </div>
                         </div>
                         <div class="text-right">

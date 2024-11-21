@@ -4,10 +4,13 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\User;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 
 class Settings extends Component
 {
+    use WithFileUploads;
+
     public $user;
     public $nama_depan;
     public $nama_belakang;
@@ -46,7 +49,7 @@ class Settings extends Component
         return [
             'nama_depan' => 'required|string|max:50',
             'nama_belakang' => 'nullable|string|max:50',
-            'email' => 'required|email|unique:user,email,' . $this->user->id_user,
+            'email' => 'required|email|unique:users,email,' . $this->user->id_user,
             'no_telepon' => 'required|numeric',
             'alamat' => 'nullable|string|max:255',
             'tanggal_lahir' => 'nullable|date',
@@ -73,8 +76,6 @@ class Settings extends Component
             'no_rekening' => $this->no_rekening,
             'foto_user' => $this->foto_user,
         ]);
-
-        dd($this->all);
 
         session()->flash('success', 'Data pengguna berhasil diperbarui!');
         return redirect()->route('settings');

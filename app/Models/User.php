@@ -27,6 +27,10 @@ class User extends Authenticatable
         'no_telepon',
         'password',
         'role',
+        'tanggal_lahir',
+        'jenis_kelamin',
+        'bank',
+        'no_rekening',
     ];
 
     /**

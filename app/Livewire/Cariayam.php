@@ -8,6 +8,7 @@ use App\Models\Unggas;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Url;
 use App\Models\Keranjang;
+use App\Models\Warung;
 
 
 class Cariayam extends Component
@@ -18,12 +19,21 @@ class Cariayam extends Component
     #[Url('sortBy')]
     public $sortBy = 'asc';
 
+    #[Url('kecamatan')]
+    public $selectedKecamatan = '';
+
 
     public function render()
     {
         $productsQuery = Unggas::where('jenis_unggas', 'like', '%' . $this->searchTerm . '%')
             ->orWhere('deskripsi', 'like', '%' . $this->searchTerm . '%')
             ->with('warung');
+
+        if ($this->selectedKecamatan) {
+            $productsQuery->whereHas('warung', function ($query) {
+                $query->where('alamat_warung', 'like', '%' . $this->selectedKecamatan . '%');
+            });
+        }
 
         // Mengatur sorting berdasarkan opsi yang dipilih
         switch ($this->sortBy) {
@@ -46,6 +56,11 @@ class Cariayam extends Component
         return view('cariayam', [
             'products' => $products,
         ]);
+    }
+
+    public function updateKecamatan($kecamatan)
+    {
+        $this->selectedKecamatan = $kecamatan;
     }
 
     public function updateSortBy($sortOption)

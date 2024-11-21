@@ -20,13 +20,16 @@
                 <div class="navbar-end">
                     <div class="flex items-center bg-white rounded-full text-pink px-4">
                         <img src="{{ asset('image/pin2.png') }}" alt="Location Icon" class="h-6 w-6" />
-                        <select class="select rounded-full text-pink bg-white font-semibold text-lg max-w-xs no-active-effect">
-                            <option class="font-semibold">Pogung Baru</option>
-                            <option class="font-semibold">Sendangadi</option>
-                            <option class="font-semibold">Sinduadi</option>
-                            <option class="font-semibold">Sumberadi</option>
-                            <option class="font-semibold">Tirtoadi</option>
-                            <option class="font-semibold">Tlogoadi</option>
+                        <select 
+                            class="select rounded-full text-pink bg-white font-semibold text-lg max-w-xs no-active-effect"
+                            wire:model="kecamatan" name="kecamatan" form="filter-form">
+                            <option value="">Pilih Kecamatan</option>
+                            <option value="Pogung Baru" class="font-semibold">Pogung Baru</option>
+                            <option value="Sendangadi" class="font-semibold">Sendangadi</option>
+                            <option value="Sinduadi" class="font-semibold">Sinduadi</option>
+                            <option value="Sumberadi" class="font-semibold">Sumberadi</option>
+                            <option value="Tirtoadi" class="font-semibold">Tirtoadi</option>
+                            <option value="Tlogoadi" class="font-semibold">Tlogoadi</option>
                         </select>
                     </div>
                     <x-button wire:navigate href="{{ route('checkout') }}" class="ml-4 btn-circle bg-white stroke-none hover:bg-white">
