@@ -1,50 +1,48 @@
-@import '/vendor/filament/filament/resources/css/theme.css';
+@import "/vendor/filament/filament/resources/css/theme.css";
 
 @config 'tailwind.config.js';
 
-th{
-  @apply bg-[#FB657A] !important
+th {
+    @apply bg-[#FB657A] !important;
 }
-.fi-ta-header-cell-label{
-  @apply text-white !important
+.fi-ta-header-cell-label {
+    @apply text-white !important;
 }
-.fi-section-content-ctn{
-  @apply  mx-auto !important;
+.fi-section-content-ctn {
+    @apply mx-auto !important;
 }
-.fi-sidebar{
-  @apply bg-[#FB657A] !important
-}
-
-.fi-topbar nav{
-  @apply bg-[#FB657A] !important
-}
-.fi-sidebar-header{
-  @apply bg-[#FB657A] !important
+.fi-sidebar {
+    @apply bg-[#FB657A] !important;
 }
 
-.filament-main-topbar{
-  @apply bg-[#FB657A] !important
+.fi-topbar nav {
+    @apply bg-[#FB657A] !important;
+}
+.fi-sidebar-header {
+    @apply bg-[#FB657A] !important;
 }
 
-.fi-sidebar-item{
-  @apply rounded-2xl mb-2 !important
+.filament-main-topbar {
+    @apply bg-[#FB657A] !important;
 }
 
-
-.fi-sidebar-item a span{
-  @apply text-white !important
+.fi-sidebar-item {
+    @apply rounded-2xl mb-2 !important;
 }
 
-.fi-sidebar-item a svg{
-  @apply text-white !important
+.fi-sidebar-item a span {
+    @apply text-white !important;
 }
 
-
-.fi-sidebar-item a:hover{
-  @apply bg-white/50 text-white cursor-pointer !important
+.fi-sidebar-item a svg {
+    @apply text-white !important;
 }
 
-.fi-sidebar-item.fi-active a, 
+.fi-sidebar-item a:hover {
+    @apply bg-white/50 text-white cursor-pointer !important;
+}
+
+.fi-sidebar-item.fi-active a,
 .fi-sidebar-item.fi-sidebar-item-active a {
     @apply bg-white/50 text-white;
 }

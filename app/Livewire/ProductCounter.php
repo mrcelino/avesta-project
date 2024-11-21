@@ -3,10 +3,13 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Keranjang;
+use Livewire\Attributes\On;
 
 class ProductCounter extends Component
 {
-    public $quantity = 1;
+    public $quantity = 0;
 
     public function increment()
     {
@@ -19,6 +22,8 @@ class ProductCounter extends Component
             $this->quantity--;
         }
     }
+
+    
 
     public function render()
     {

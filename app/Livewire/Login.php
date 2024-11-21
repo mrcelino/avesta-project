@@ -23,7 +23,12 @@ class Login extends Component
 
         if (Auth::attempt($credentials)) {
             session()->regenerate(false);
-            return redirect()->intended('/dashboard'); // Redirect to dashboard after successful login.
+
+            if (Auth::user()->role === 'pemilik') {
+                return redirect()->to('/mitra'); 
+            } else {
+                return redirect()->to('/dashboard'); 
+            }
         } else {
             session()->flash('error', 'Login gagal, email atau password salah.');
         }

@@ -29,3 +29,4 @@
     <img data-aos="fade-up" data-aos-duration="3000" src="{{ asset('image/hero5.png') }}" alt="Gambar di Tengah" class="w-96 h-auto object-contain">
   </div>
 </section>
+

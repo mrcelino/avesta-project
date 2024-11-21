@@ -31,10 +31,13 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->font('Poppins')
             ->darkMode(false)
+            ->font('Poppins')
+            ->darkMode(false)
             ->id('admin')
             ->path('admin')
             ->login()
             ->colors([
+                'primary' => '#FB657A',
                 'primary' => '#FB657A',
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
@@ -62,6 +65,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->viteTheme('resources/css/filament/admin/theme.css');
             ])
             ->viteTheme('resources/css/filament/admin/theme.css');
     }

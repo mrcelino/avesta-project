@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('alamat', 255)->nullable();
             $table->string('password', 100);
             $table->enum('role', ['pemilik', 'karyawan', 'user']);
+            $table->date('tanggal_lahir')->nullable(); 
+            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan'])->nullable(); 
+            $table->enum('bank', ['Mandiri', 'BCA', 'BRI', 'BNI', 'BSI', 'Danamon'])->nullable(); 
+            $table->string('no_rekening', 30)->nullable(); 
             $table->timestamps();
         });
     }

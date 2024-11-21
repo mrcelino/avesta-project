@@ -51,4 +51,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function fotoUsers()
+    {
+        return $this->hasMany(FotoUser::class, 'id_user', 'id_user');
+    }
 }
