@@ -11,7 +11,7 @@ class Unggas extends Model
 
     protected $table = 'unggas';
     protected $primaryKey = 'id_unggas';
-    protected $fillable = ['jenis_unggas', 'harga_per_kg', 'stok'];
+    protected $fillable = ['jenis_unggas', 'harga_per_kg', 'stok', 'penjualan'];
 
     public function warung()
     {

@@ -116,7 +116,7 @@ class Checkout extends Component
                     'id_order' => $order->id_order,
                     'id_unggas' => $item->id_unggas,
                     'jumlah_kg' => $item->jumlah,
-                    'harga_total_per_item' => $item->produk->harga * $this->jumlah[$item->id],
+                    'harga_total_per_item' => $item->produk->harga * $this->jumlah[$item->id_keranjang],
                     'catatan' => $item->catatan,
                 ]);
             }

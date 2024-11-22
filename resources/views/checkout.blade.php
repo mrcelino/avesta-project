@@ -24,7 +24,8 @@
                             <p>{{ $item->unggas->warung->nama_warung }}</p>
                             <div class="flex items-center mt-4">
                                 <img src="{{ asset('image/note.png') }}" alt="Note Icon" class="mr-2" />
-                                <button wire:click="$set('catatan[{{ $item->id }}]', '{{ $item->catatan }}')">Tambah Catatan</button>
+                                <button  onclick="my_modal_4.showModal()">Tambah Catatan</button>
+                                <button wire:click="$set('catatan[{{ $item->id_keranjang }}]', '{{ $item->catatan }}')">Tambah Catatan</button>
                             </div>
                         </div>
                         <div class="text-right">
@@ -57,4 +58,17 @@
             </div>
         </div>
     </main>
+    <dialog id="my_modal_4" class="modal">
+        <div class="modal-box max-w-sm">
+          <input class="p-2 w-full min-h-14 border-2 rounded-2xl" placeholder="Tambah Catatan"></input>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button, it will close the modal -->
+              <button class="btn hover:bg-white bg-white border-2 border-gray-200 text-black rounded-2xl">Batal</button>
+              <button class="btn hover:bg-pink bg-pink text-white rounded-2xl">Tambah</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
 </div>
+

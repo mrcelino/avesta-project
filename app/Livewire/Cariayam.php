@@ -37,7 +37,7 @@ class Cariayam extends Component
                 $productsQuery->orderBy('created_at', 'desc');
                 break;
             case 'terlaris':
-                $productsQuery->orderBy('jumlah_terjual', 'desc');
+                $productsQuery->orderBy('penjualan', 'desc');
                 break;
         }
 

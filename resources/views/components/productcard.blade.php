@@ -63,7 +63,7 @@
                 
                 <!-- Aksi -->
                 @livewire('product-counter')
-                <a wire:navigate href="/checkout" class="bg-pink text-white w-full py-2 font-semibold rounded-2xl mt-4 text-center">Tambah ke keranjang</a>
+                <button wire:click="addToKeranjang({{$product->id_unggas}})" class="bg-pink text-white w-full py-2 font-semibold rounded-2xl mt-4">Tambah ke keranjang</button>
             </div>
         </div>
     </div>
