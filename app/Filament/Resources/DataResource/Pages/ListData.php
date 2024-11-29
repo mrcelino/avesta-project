@@ -8,12 +8,16 @@ use Filament\Resources\Pages\ListRecords;
 
 class ListData extends ListRecords
 {
+    protected static ?string $title = 'Laporan Penjualan';
     protected static string $resource = DataResource::class;
 
-    protected function getHeaderActions(): array
+    protected function getHeaderWidgets(): array
     {
         return [
-            Actions\CreateAction::make(),
+            DataResource\Widgets\BarChart::class,
+            DataResource\Widgets\SalesChart::class,
+            
         ];
     }
+
 }

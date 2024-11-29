@@ -5,6 +5,9 @@
 th {
     @apply bg-[#FB657A] !important;
 }
+.fi-icon-btn-icon{
+    @apply text-white
+}
 .fi-ta-header-cell-label {
     @apply text-white !important;
 }

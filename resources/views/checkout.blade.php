@@ -24,9 +24,38 @@
                             <p>{{ $item->unggas->warung->nama_warung }}</p>
                             <div class="flex items-center mt-4">
                                 <img src="{{ asset('image/note.png') }}" alt="Note Icon" class="mr-2" />
-                                <button  onclick="my_modal_4.showModal()">Tambah Catatan</button>
-                                <button wire:click="$set('catatan[{{ $item->id_keranjang }}]', '{{ $item->catatan }}')">Tambah Catatan</button>
-                            </div>
+                                <button onclick="document.getElementById('modal_{{ $item->id_keranjang }}').showModal()">
+                                    {{ \Illuminate\Support\Str::limit(isset($catatan[$item->id_keranjang]) && $catatan[$item->id_keranjang] !== '' ? $catatan[$item->id_keranjang] : 'Tambah Catatan', 100) }}
+                                </button>
+                                
+                                <dialog id="modal_{{ $item->id_keranjang }}" class="modal">
+                                    <div class="modal-box max-w-sm">
+                                        <textarea 
+                                            class="p-2 w-full min-h-14 border-2 rounded-2xl" 
+                                            placeholder="Tambah Catatan" 
+                                            wire:model.defer="catatan.{{ $item->id_keranjang }}"
+                                        ></textarea>
+                                        <div class="modal-action">
+                                            <form method="dialog">
+                                                <!-- Tombol Batal untuk menutup modal -->
+                                                <button 
+                                                    onclick="document.getElementById('modal_{{ $item->id_keranjang }}').close()" 
+                                                    class="btn hover:bg-white bg-white border-2 border-gray-200 text-black rounded-2xl"
+                                                >
+                                                    Batal
+                                                </button>
+                                                <!-- Tombol Tambah untuk memperbarui keranjang -->
+                                                <button 
+                                                    wire:click="updateKeranjang({{ $item->id_keranjang }})" 
+                                                    class="btn hover:bg-pink bg-pink text-white rounded-2xl"
+                                                >
+                                                    Tambah
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </dialog>
+                            </div>                            
                         </div>
                         <div class="text-right">
                             <p class="font-bold">Rp.{{ number_format($item->unggas->harga_per_kg, 0, ',', '.') }}</p>

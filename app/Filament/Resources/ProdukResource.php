@@ -38,6 +38,10 @@ class ProdukResource extends Resource
                         ->label('Harga')
                         ->numeric()
                         ->required(),
+                    
+                    Forms\Components\TextInput::make('deskripsi')
+                        ->label('Deskripsi')
+                        ->required(),
                         
                     Forms\Components\TextInput::make('stok')
                         ->label('Stok')

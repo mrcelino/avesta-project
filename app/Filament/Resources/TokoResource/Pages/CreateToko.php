@@ -8,5 +8,6 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateToko extends CreateRecord
 {
+    protected static ?string $title = 'Tambah Toko';
     protected static string $resource = TokoResource::class;
 }

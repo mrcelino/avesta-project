@@ -25,7 +25,7 @@ return new class extends Migration {
         });
 
         // Menambahkan FK ke tabel karyawan
-        Schema::table('karyawan', function (Blueprint $table) {
+        Schema::table('karyawans', function (Blueprint $table) {
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id_user')->on('users')->onDelete('restrict')->onUpdate('cascade');        
         });

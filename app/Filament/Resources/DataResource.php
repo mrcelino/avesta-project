@@ -17,7 +17,8 @@ class DataResource extends Resource
 {
     protected static ?string $model = Unggas::class;
     protected static ?string $title = 'Data';
-    protected static ?string $navigationLabel = 'Produk';
+    protected ?string $heading = 'Data';
+    protected static ?string $navigationLabel = 'Data';
     protected static ?string $navigationIcon = 'heroicon-s-chart-bar';
 
     public static function form(Form $form): Form
@@ -28,26 +29,26 @@ class DataResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                //
-            ])
-            ->filters([
-                //
-            ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]), 
-            ])
+    // public static function table(Table $table): Table
+    // {
+    //     return $table
+    //         ->columns([
+    //             //
+    //         ])
+    //         ->filters([
+    //             //
+    //         ])
+    //         ->actions([
+    //             Tables\Actions\EditAction::make(),
+    //         ])
+    //         ->bulkActions([
+    //             Tables\Actions\BulkActionGroup::make([
+    //                 Tables\Actions\DeleteBulkAction::make(),
+    //             ]), 
+    //         ])
             
-            ;
-    }
+    //         ;
+    // }
 
     public static function getRelations(): array
     {
@@ -55,6 +56,10 @@ class DataResource extends Resource
             //
         ];
     }
+    public function getColumns(): int | string | array
+{
+    return 2;
+}
 
     public static function getPages(): array
     {
@@ -67,7 +72,7 @@ class DataResource extends Resource
     public static function getWidgets(): array
     {
     return [
-        BarChart::class,
+        DataResource\Widgets\BarChart::class,
     ];
     }
 }

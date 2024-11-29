@@ -20,7 +20,7 @@
                     <div class="mb-4">
                         <input wire:model="email" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="E-mail" type="email"/>
                     </div>
-                    <button class="bg-pink text-white rounded-2xl p-3 w-full font-medium" type="submit" href="emailverification">
+                    <button class="bg-pink text-white rounded-2xl p-3 w-full font-medium" type="submit">
                         Selanjutnya
                     </button>
                 </form>

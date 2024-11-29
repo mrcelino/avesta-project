@@ -42,6 +42,6 @@ class Emailverification extends Component
     }
     public function render()
     {
-        return view('livewire.emailverification');
+        return view('emailverification');
     }
 }

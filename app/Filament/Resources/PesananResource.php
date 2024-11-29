@@ -1,13 +1,14 @@
 <?php
-
 namespace App\Filament\Resources;
 use Illuminate\Support\Facades\Storage; 
 use App\Filament\Resources\PesananResource\Pages;
 use App\Filament\Resources\PesananResource\RelationManagers;
 use App\Models\Pesanan;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Columns\ImageColumn;
 use App\Models\Unggas;
-use Filament\Forms;
+use Filament\Forms; 
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -39,9 +40,10 @@ class PesananResource extends Resource
                 ->url(fn ($record) => Storage::url($record->foto_produk)), // menggunakan Storage::url
                 Tables\Columns\TextColumn::make('jenis_unggas')->label('Nama'),
                 Tables\Columns\TextColumn::make('harga_per_kg')
-                ->label('Harga Satuan')
+                ->label('Total Harga')
                 ->formatStateUsing(fn ($state) => 'Rp ' . number_format($state, 0, ',', '.')),
                 Tables\Columns\TextColumn::make('stok')->label('Jumlah Pesanan') ->sortable(),
+                ToggleColumn::make('Sudah Dibayar')
                 // Tables\Columns\TextColumn::make('penjualan')->label('Penjualan'),
             ])
             ->filters([

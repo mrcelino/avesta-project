@@ -1,6 +1,6 @@
 <div>
     <div wire:loading.class="opacity-5 transition duration-1000">
-        <div class="w-full gap-4 mx-auto mt-20 h-[415px] flex justify-center">
+        <div class="hidden md:flex w-full gap-4 mx-auto mt-20 h-[415px] justify-center">
             <!-- Loop untuk menampilkan setiap card -->
             @foreach ($cards as $card)
                 <div class="border-2 rounded-3xl shadow-md overflow-hidden flex w-1/2 h-full transition-all duration-500 ease-in-out transform">

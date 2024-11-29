@@ -1,6 +1,6 @@
 <div class="bg-pink flex items-center justify-center min-h-screen text-black" style="background-image: url('/image/bghero.png');">
     <div class="bg-white rounded-3xl shadow-lg p-12 flex" style="width: 1000px;">
-        <div class="w-5/12 flex items-center justify-center rounded-3xl bg-[#F99BA9]">
+        <div class="w-5/12 hidden md:flex items-center justify-center rounded-3xl bg-[#F99BA9]">
             <img alt="Illustration of two people shaking hands with documents flying around" class="rounded-lg p-4" height="400" src="{{ asset('image/login.png') }}" width="400" />
         </div>
         <div class="w-7/12 pl-16">

@@ -11,7 +11,18 @@ class Warung extends Model
 
     protected $table = 'warung'; 
     protected $primaryKey = 'id_warung';
-    protected $fillable = ['nama_warung']; 
+    protected $fillable = [
+        'nama_warung',
+        'alamat_warung',
+        'nomor_hp',
+        'deskripsi',
+        'kecamatan',
+        'kelurahan',
+        'kota',
+        'kode_pos',
+        'foto_warung',
+    ];
+    
 
     
     public function unggas()

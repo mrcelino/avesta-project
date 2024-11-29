@@ -16,7 +16,7 @@ class Checkout extends Component
     public $nama_belakang;
     public $email;
 
-    public $keranjangItems;
+    public $keranjangItems; 
     public $catatan = [];
     public $jumlah = [];
     public $totalBelanja = 0;
