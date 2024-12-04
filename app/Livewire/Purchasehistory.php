@@ -23,12 +23,12 @@ class Purchasehistory extends Component
     
         // Data produk, foto, dan deskripsi
         $produkList = [
-            'Ayam Utuh' => 1000,
-            'Dada Ayam' => 500,
-            'Ceker Ayam' => 200,
-            'Sayap Ayam' => 300,
-            'Ayam Fillet' => 450,
-            'Jeroan Ayam' => 150,
+            'Ayam Utuh' => 50000,
+            'Dada Ayam' => 33000,
+            'Ceker Ayam' => 24000,
+            'Sayap Ayam' => 18000,
+            'Ayam Fillet' => 20000,
+            'Jeroan Ayam' => 15000,
         ];
         
         $fotoList = [
@@ -50,8 +50,8 @@ class Purchasehistory extends Component
                 'purchase_date' => $faker->dateTimeThisYear()->format('Y-m-d'),
                 'product_name' => $product,
                 'price_per_kg' => $produkList[$product],
-                'quantity_kg' => $faker->numberBetween(10, 100),
-                'total_price' => $produkList[$product] * $faker->numberBetween(10, 100),
+                'quantity_kg' => $quantity_kg = $faker->numberBetween(10, 30), // Mendeklarasikan $quantity_kg dan mengisinya dengan Faker
+                'total_price' => $produkList[$product] * $quantity_kg, // Total price berdasarkan quantity_kg
                 'photo_url' => $fotoList[$product],
                 'payment_method' => $faker->randomElement($paymentMethods),
                 'status' => $faker->randomElement($statusList), // Menambahkan status
