@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('tanggal_order');
             $table->string('catatan', 255)->nullable();
             $table->decimal('total_harga', 10, 2);
-            $table->enum('status_order', ['pending', 'processed', 'completed', 'canceled']);
+            $table->enum('status_order', ['processed', 'completed', 'canceled']);
             $table->timestamps();
         });
     }
