@@ -10,7 +10,7 @@
     <p class="mt-6">Total Pembelian</p>
     <p class="text-lg font-semibold">Rp. {{ number_format($produk['total_price'], 0, ',', '.') }}</p>
     <div class="mt-2 flex items-center">
-      <button class="text-pink mr-4" onclick="showModal('{{ $produk['product_name'] }}', '{{ $produk['quantity_kg'] }}', '{{ $produk['price_per_kg'] }}', '{{ $produk['total_price'] }}', '{{ $invoice['number'] }}', '{{ $invoice['date'] }}', '{{ $invoice['payment_method'] }}')">
+      <button class="text-pink mr-4" onclick="showModal('{{ $produk['product_name'] }}', '{{ $produk['quantity_kg'] }}', '{{ $produk['price_per_kg'] }}', '{{ $produk['total_price'] }}', '{{ $produk['invoice_number'] }}', '{{ $produk['purchase_date'] }}', '{{ $produk['payment_method'] }}', '{{ $produk['status'] }}')">
         Lihat Detail Transaksi
       </button>
       
@@ -29,7 +29,7 @@
     </form>
     <h3 class="text-xl font-bold mb-2">Detail Transaksi</h3>
     <div class="bg-[#FFE5E9] rounded-2xl min-h-44 p-4">
-      <h3 class="text-lg font-semibold mb-2">Pesanan Selesai</h3>
+      <h3 id="status" class="text-lg font-semibold mb-2"></h3>
       <div class="flex bg-white border min-h-16 rounded-2xl mb-2 p-2">
         <div class="flex-1 text-left"> 
           <h3 class="font-medium">Nomor Invoice</h3>
@@ -82,13 +82,14 @@
 
 
 <script>
-  function showModal(productName, quantityKg, pricePerKg, totalPrice, invoiceNumber, invoiceDate, paymentMethod) {
+  function showModal(productName, quantityKg, pricePerKg, totalPrice, invoiceNumber, invoiceDate, paymentMethod, status) {
   document.getElementById('productName').innerText = productName + " " + quantityKg + "kg";
   document.getElementById('productQuantity').innerText = quantityKg + " x Rp. " + new Intl.NumberFormat().format(pricePerKg);
   document.getElementById('totalPrice').innerText = "Rp. " + new Intl.NumberFormat().format(totalPrice);
   document.getElementById('invoiceNumber').innerText = invoiceNumber;
   document.getElementById('invoiceDate').innerText = invoiceDate;
   document.getElementById('paymentMethod').innerText = paymentMethod;
+  document.getElementById('status').innerText = status;
   document.getElementById('paymentTotal').innerText = "Rp. " + new Intl.NumberFormat().format(totalPrice);
 
 

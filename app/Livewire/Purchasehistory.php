@@ -1,12 +1,19 @@
 <?php
 
 namespace App\Livewire;
-
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Faker\Factory as Faker;
 
 class Purchasehistory extends Component
 {
+    #[Url('sortBy')]
+    public $filterStatus = 'semua'; // Status filter default
+
+    public function filterByStatus($status)
+    {
+        $this->filterStatus = $status; // Mengubah filter berdasarkan tombol yang diklik
+    }
     public function render()
     {
         $faker = Faker::create();
@@ -33,15 +40,7 @@ class Purchasehistory extends Component
             'Jeroan Ayam' => '/uploads/fotos/01JC0M03ENDMRAERST6B19VGAC.png',
         ];
         
-        $deskripsiList = [
-            'Ayam Utuh' => 'Ayam utuh dengan kualitas terbaik, siap dimasak untuk berbagai hidangan.',
-            'Dada Ayam' => 'Dada ayam fillet tanpa tulang, sempurna untuk sajian ayam panggang atau ayam goreng.',
-            'Ceker Ayam' => 'Ceker ayam segar, cocok untuk berbagai jenis masakan, terutama sup ayam.',
-            'Sayap Ayam' => 'Sayap ayam enak untuk digoreng atau dipanggang, cocok sebagai camilan atau lauk.',
-            'Ayam Fillet' => 'Fillet ayam tanpa tulang, sangat mudah diolah dan kaya akan protein.',
-            'Jeroan Ayam' => 'Jeroan ayam segar, cocok untuk masakan tradisional atau sup.',
-        ];
-    
+        $statusList = ['Pesanan Berlangsung', 'Pesanan Gagal', 'Pesanan Selesai'];
         // Generate 10 dummy items
         $dummyData = [];
         for ($i = 0; $i < 10; $i++) {
@@ -54,21 +53,22 @@ class Purchasehistory extends Component
                 'quantity_kg' => $faker->numberBetween(10, 100),
                 'total_price' => $produkList[$product] * $faker->numberBetween(10, 100),
                 'photo_url' => $fotoList[$product],
-                'description' => $deskripsiList[$product],
                 'payment_method' => $faker->randomElement($paymentMethods),
+                'status' => $faker->randomElement($statusList), // Menambahkan status
             ];
         }
-    
-        // Create a dummy invoice object or array
-        $invoice = [
-            'number' => 'INV/' . now()->format('Ymd') . '/12345',
-            'date' => now()->format('Y-m-d'),
-            'payment_method' => 'Mandiri'
-        ];
-    
+
+        // Filter data based on the selected status
+        $filteredData = match ($this->filterStatus) {
+            'semua' => $dummyData,
+            'berlangsung' => array_filter($dummyData, fn($item) => $item['status'] === 'Pesanan Berlangsung'),
+            'berhasil' => array_filter($dummyData, fn($item) => $item['status'] === 'Pesanan Gagal'),
+            'tidak_berhasil' => array_filter($dummyData, fn($item) => $item['status'] === 'Pesanan Selesai'),
+            default => $dummyData,
+        };
+
         return view('purchasehistory', [
-            'dummyData' => $dummyData,
-            'invoice' => $invoice,
+            'filteredData' => $filteredData, // Kirimkan filteredData ke tampilan
         ]);
     }
     

@@ -5,9 +5,21 @@
                 <div class="flex justify-between items-center mb-4 mt-20">
                     <div class="flex space-x-4 bg-cInput w-full rounded-3xl p-2">
                         <div class="px-4 py-2 text-xl font-semibold">Urutkan:</div>
-                        <button wire:click="updateSortBy('terbaru')" class="px-4 py-2 bg-white rounded-3xl shadow-md" value="terbaru">Terbaru</button>
-                        <button wire:click="updateSortBy('terbaru')" class="px-4 py-2 bg-white rounded-3xl shadow-md" value="terlaris">Terlaris</button>
-                        <select wire:model="sortBy" name="sortBy" form="filter-form" onchange="this.form.submit()" class="select select-bordered px-4 py-2 bg-white rounded-3xl shadow-md max-w-xs">
+                        <button 
+                            wire:click="updateSortBy('terbaru')" 
+                            class="px-4 py-2 bg-white rounded-3xl shadow-md 
+                                {{ $sortBy === 'terbaru' ? 'border-pink border-2' : '' }}" 
+                            value="terbaru">
+                            Terbaru
+                        </button>
+                        <button 
+                            wire:click="updateSortBy('terlaris')" 
+                            class="px-4 py-2 bg-white rounded-3xl shadow-md 
+                                {{ $sortBy === 'terlaris' ? 'border-pink border-2' : '' }}" 
+                            value="terlaris">
+                            Terlaris
+                        </button>
+                        <select wire:model="sortBy" name="sortBy" form="filter-form" onchange="this.form.submit()" class="select select-bordered px-4 pr-8 py-2 bg-white rounded-3xl shadow-md max-w-xs {{ $sortBy === 'asc' ? 'border-pink border-2' : ($sortBy === 'desc' ? 'border-pink border-2' : '') }}">
                             <option disabled selected>Harga</option>
                             <option class="hover:bg-pink hover:text-white active:bg-heading" value="asc">Termurah</option>
                             <option class="hover:bg-pink hover:text-white active:bg-heading" value="desc">Termahal</option>
