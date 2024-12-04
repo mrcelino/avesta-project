@@ -5,13 +5,6 @@
         <div class="w-2/3">
             <h2 class="text-2xl font-bold mb-4">Keranjang</h2>
             <div class="bg-white p-4 rounded-2xl shadow-md border">
-                <!-- Pilih Semua -->
-                <div class="flex items-center justify-between mb-4">
-                    <label class="flex items-center space-x-2">
-                        <input type="checkbox" />
-                        <span>Pilih Semua</span>
-                    </label>
-                </div>
 
                 <!-- Daftar Produk -->
                 <div class="space-y-4">

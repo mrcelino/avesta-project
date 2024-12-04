@@ -11,6 +11,11 @@
             <p class="mb-10     font-medium text-center">
                 Demi keamanan akun, silakan buat kata sandi baru yang hanya kamu yang tahu.
             </p>
+            @if (session()->has('message'))
+                <div class="alert alert-success text-center">
+                    {{ session('message') }}
+                </div>
+            @endif
             <form wire:submit="authenticate">
                 <div class="mb-4">
                     @error('password') <span class="error">{{ $message }}</span> @enderror
@@ -19,8 +24,8 @@
                 <div class="mb-8">
                     <input wire:model="password_confirmation" class="border border-gray-300 rounded-2xl p-3 pl-4 w-full bg-cInput" placeholder="Konfirmasi Kata Sandi" type="password" />
                 </div>
-                <button class="bg-pink text-white rounded-2xl p-2 w-full font-medium" type="submit" href="dashboard">
-                    Masuk
+                <button class="bg-pink text-white rounded-2xl p-2 w-full font-medium" type="submit">
+                    Ganti Password
                 </button>
             </form>
         </div>

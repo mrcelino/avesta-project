@@ -20,25 +20,13 @@
                     @endforeach
                 </div>
                 <div class="join flex justify-center mt-14">
-                    @if ($products->onFirstPage())
-                    <button class="join-item btn btn-md bg-white disabled" disabled>Prev</button>
-                    @else
-                    <button class="join-item btn btn-md bg-white" wire:click="previousPage">Prev</button>
-                    @endif
-
                     @foreach(range(1, $products->lastPage()) as $page)
-                    <button class="join-item btn btn-md bg-white {{ $page == $products->currentPage() ? 'text-white bg-pink' : '' }}" 
+                    <button class=" btn btn-lg glass rounded-2xl mx-2 {{ $page == $products->currentPage() ? 'text-white bg-pink rounded-full' : '' }}" 
                     onclick="window.location.href='{{ $products->url($page) }}'"
                     >
                         {{ $page }}
                     </button>
                     @endforeach
-
-                    @if ($products->hasMorePages())
-                    <button class="join-item btn btn-md bg-white" wire:click="nextPage">Next</button>
-                    @else
-                    <button class="join-item btn btn-md bg-white disabled" disabled>Next</button>
-                    @endif
                 </div>
             </div>
         </main>
