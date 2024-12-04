@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers\Filament;
-
+use Filament\Navigation\NavigationItem;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -33,13 +33,14 @@ class KaryawanPanelProvider extends PanelProvider
             ->spa()
             ->brandLogo(asset('image/avesta2.png'))
             ->brandLogoHeight('3rem')
+            ->breadcrumbs(false)
             ->default()
             ->font('Poppins')
             ->darkMode(false)
             ->id('karyawan')
             ->resources([
                 // DataResource::class, // Gunakan resource yang sudah ada
-                ProdukResource::class, PesananResource::class, TokoResource::class
+                ProdukResource::class, PesananResource::class,
             ])
             ->path('karyawan')
             ->colors([
@@ -65,6 +66,11 @@ class KaryawanPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+            ])
+            ->navigationItems([
+                NavigationItem::make('Ganti Password')
+                    ->url('securelogin', shouldOpenInNewTab: true)
+                    ->icon('heroicon-s-lock-closed')
             ])
             ->authMiddleware([
                 Authenticate::class,

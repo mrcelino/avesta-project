@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Providers\Filament;
-
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -29,13 +28,12 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogo(asset('image/avesta2.png'))
             ->brandLogoHeight('3rem')
             ->default()
-            ->font('Poppins')
             ->darkMode(false)
             ->font('Poppins')
             ->darkMode(false)
+            ->breadcrumbs(false)
             ->id('admin')
             ->path('admin')
-            ->login()
             ->colors([
                 'primary' => '#FB657A',
                 'primary' => '#FB657A',
