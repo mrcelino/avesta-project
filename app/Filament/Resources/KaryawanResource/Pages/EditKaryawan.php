@@ -8,6 +8,7 @@ use Filament\Resources\Pages\EditRecord;
 
 class EditKaryawan extends EditRecord
 {
+    protected static ?string $title = 'Edit Karyawan';
     protected static string $resource = KaryawanResource::class;
 
     protected function getHeaderActions(): array
@@ -15,5 +16,9 @@ class EditKaryawan extends EditRecord
         return [
             Actions\DeleteAction::make(),
         ];
+    }
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
     }
 }

@@ -10,4 +10,9 @@ class CreateProduk extends CreateRecord
 {
     protected static ?string $title = 'Tambah Produk';
     protected static string $resource = ProdukResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

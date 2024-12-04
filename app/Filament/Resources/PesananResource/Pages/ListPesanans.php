@@ -19,13 +19,21 @@ class ListPesanans extends ListRecords
             // Actions\CreateAction::make(),
         ];
     }
+    
     public function getTabs(): array
-{
-    return [
-        'Semua Pesanan' => Tab::make(),
-        'Siap Diambil' => Tab::make(),
-        'Pesanan Selesai' => Tab::make(),
-        'Pesanan Gagal' => Tab::make()
-    ];
-}
+    {
+        return [
+            'Semua Pesanan' => Tab::make('Semua Pesanan')
+                ->query(fn (Builder $query) => $query),
+        
+            'Sedang Berlangsung' => Tab::make('Sedang Berlangsung')
+                ->query(fn (Builder $query) => $query->where('status_order', 'processed')),
+        
+            'Pesanan Selesai' => Tab::make('Pesanan Selesai')
+                ->query(fn (Builder $query) => $query->where('status_order', 'completed')),
+        
+            'Pesanan Gagal' => Tab::make('Pesanan Gagal')
+                ->query(fn (Builder $query) => $query->where('status_order', 'canceled')),
+        ];
+    }
 }

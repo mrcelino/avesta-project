@@ -10,4 +10,8 @@ class CreateToko extends CreateRecord
 {
     protected static ?string $title = 'Tambah Toko';
     protected static string $resource = TokoResource::class;
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

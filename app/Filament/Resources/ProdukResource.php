@@ -27,43 +27,56 @@ class ProdukResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                Section::make('')
-                 ->schema([    
-                    TextInput::make('jenis_unggas')
-                    ->label('Nama')
-                    ->required(),
-                    Forms\Components\TextInput::make('harga_per_kg')
-                        ->label('Harga')
-                        ->numeric()
-                        ->required(),
-                    
-                    Forms\Components\TextInput::make('deskripsi')
-                        ->label('Deskripsi')
-                        ->required(),
-                        
-                    Forms\Components\TextInput::make('stok')
-                        ->label('Stok')
-                        ->numeric()
-                        ->required(),
-                        
-                    Forms\Components\TextInput::make('penjualan')
-                        ->label('Penjualan')
-                        ->numeric()
-                        ->default(0), // Default 0
-                    
-                    FileUpload::make('foto_unggas')
-                        ->label('Foto')
-                        ->columnSpanFull()
-                        ->image() 
-                        ->maxSize(2048) 
-                        ->directory('uploads/fotos') 
-                        ->required(), 
-                 ])->columns(2)
-            ]);
-    }
-
+        return $form->schema([
+            // Grid layout dengan 12 kolom
+            Forms\Components\Grid::make()
+                ->schema([
+                    // Section pertama (Data Unggas)
+                    Section::make('Data Unggas')
+                        ->schema([
+                            TextInput::make('jenis_unggas')
+                                ->label('Nama')
+                                ->required(),
+    
+                            TextInput::make('harga_per_kg')
+                                ->label('Harga')
+                                ->numeric()
+                                ->required(),
+    
+                            TextInput::make('deskripsi')
+                                ->label('Deskripsi')
+                                ->required(),
+    
+                            TextInput::make('stok')
+                                ->label('Stok')
+                                ->numeric()
+                                ->required(),
+    
+                            TextInput::make('penjualan')
+                                ->label('Penjualan')
+                                ->numeric()
+                                ->default(0),
+                        ])
+                        ->columns(1) // Satu kolom untuk setiap field
+                        ->columnSpan(6), // Setengah lebar dari grid utama
+    
+                    // Section kedua (Foto Unggas)
+                    Section::make('Foto Unggas')
+                        ->schema([
+                            FileUpload::make('foto_unggas')
+                                ->label('Foto')
+                                ->image()
+                                ->maxSize(2048)
+                                ->directory('uploads/fotos')
+                                ->required(),
+                        ])
+                        ->columns(1) // Satu kolom untuk file upload
+                        ->columnSpan(6), // Setengah lebar dari grid utama
+                ])
+                ->columns(12) // Definisi grid utama dengan 12 kolom
+                ->columnSpan(12), // Menetapkan bahwa grid menempati lebar penuh
+        ]);
+    }    
     public static function table(Table $table): Table
     {
         return $table
@@ -84,7 +97,8 @@ class ProdukResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                DeleteAction::make(),
+                DeleteAction::make()
+                ->modalHeading('Hapus Produk?')
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
