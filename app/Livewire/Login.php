@@ -26,7 +26,11 @@ class Login extends Component
 
             if (Auth::user()->role === 'pemilik') {
                 return redirect()->to('/mitra'); 
-            } else {
+            }
+            if (Auth::user()->role === 'karyawan') {
+                return redirect()->to('/karyawan'); 
+            } 
+            else {
                 return redirect()->to('/dashboard'); 
             }
         } else {

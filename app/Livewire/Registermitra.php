@@ -7,7 +7,7 @@ use Livewire\Component;
 
 use Livewire\Attributes\Layout;
 
-class Register extends Component
+class Registermitra extends Component
 {
     public $nama_depan;
     public $nama_belakang;
@@ -18,7 +18,7 @@ class Register extends Component
     public $password_confirmation;
     public $role; 
 
-    public function mount($role = 'user') // Default peran adalah 'user' jika tidak diberikan
+    public function mount($role = 'pemilik') // Default peran adalah 'user' jika tidak diberikan
     {
         $this->role = $role;
     }
@@ -49,6 +49,6 @@ class Register extends Component
 
     public function render()
     {
-        return view('register');
+        return view('livewire.registermitra');
     }
 }

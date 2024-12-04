@@ -9,7 +9,7 @@ use Livewire\Attributes\On;
 
 class ProductCounter extends Component
 {
-    public $quantity = 0;
+    public $quantity = 1;
 
     public function increment()
     {
