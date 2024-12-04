@@ -12,6 +12,25 @@ class Order extends Model
     protected $fillable = [
         'id_user', 'tanggal_order', 'total_harga', 'status_order'
     ];
+        // Accessor untuk is_completed
+    public function getIsCompletedAttribute()
+    {
+        return $this->status_order === 'completed';
+    }
+
+    // Mutator untuk is_completed
+    public function setIsCompletedAttribute($value)
+    {
+        $this->attributes['status_order'] = $value ? 'completed' : 'processed';
+    }
+    protected $casts = [
+        'status_order' => 'string',
+    ];
+    protected $primaryKey = 'id_order';
+
+    // Jika primary key bukan auto-increment, tambahkan ini
+    public $incrementing = true;
+
     public function user()
     {
         return $this->belongsTo(User::class);

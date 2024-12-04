@@ -6,8 +6,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
+use Illuminate\Support\Facades\Hash;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -24,6 +27,7 @@ class User extends Authenticatable
         'nama_belakang',
         'email',
         'alamat',
+        'foto',
         'no_telepon',
         'password',
         'role',
@@ -40,7 +44,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the attributes that should be cast.
+     * The attributes that should be cast.
      *
      * @return array<string, string>
      */
@@ -55,5 +59,39 @@ class User extends Authenticatable
     public function fotoUsers()
     {
         return $this->hasMany(FotoUser::class, 'id_user', 'id_user');
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        // Untuk panel admin
+        if ($panel->getId() === 'admin') {
+            return $this->role === 'pemilik';
+        }
+        
+        // Untuk panel karyawan
+        if ($panel->getId() === 'karyawan') {
+            return $this->role === 'karyawan';
+        }
+        
+        // Tambahkan logika default jika diperlukan
+        return false;
+    }
+
+    /**
+     * Handle default values for role and password.
+     */
+    protected static function booted()
+    {
+        static::creating(function ($user) {
+            // Set default role to 'karyawan' if not provided
+            if (empty($user->role)) {
+                $user->role = 'karyawan';
+            }
+
+            // Set default password to '123' (hashed) if not provided
+            if (empty($user->password)) {
+                $user->password = Hash::make('12345678');
+            }
+        });
     }
 }
