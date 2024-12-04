@@ -76,7 +76,7 @@
                     <span>Total Belanja</span>
                     <span class="font-bold">Rp.{{ number_format($totalBelanja, 0, ',', '.') }}</span>
                 </div>
-                <button wire:click="konfirmasiBelanja" class="bg-pink text-white w-full py-2 rounded-lg">Konfirmasi</button>
+                <button wire:click="konfirmasiBelanja" class="bg-pink text-white w-full py-2 rounded-lg font-bold">Konfirmasi</button>
             </div>
         </div>
     </main>

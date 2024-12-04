@@ -62,8 +62,8 @@ class Purchasehistory extends Component
         $filteredData = match ($this->filterStatus) {
             'semua' => $dummyData,
             'berlangsung' => array_filter($dummyData, fn($item) => $item['status'] === 'Pesanan Berlangsung'),
-            'berhasil' => array_filter($dummyData, fn($item) => $item['status'] === 'Pesanan Gagal'),
-            'tidak_berhasil' => array_filter($dummyData, fn($item) => $item['status'] === 'Pesanan Selesai'),
+            'berhasil' => array_filter($dummyData, fn($item) => $item['status'] === 'Pesanan Selesai'),
+            'tidak_berhasil' => array_filter($dummyData, fn($item) => $item['status'] === 'Pesanan Gagal'),
             default => $dummyData,
         };
 
