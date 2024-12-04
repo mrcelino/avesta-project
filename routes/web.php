@@ -16,6 +16,7 @@ use App\Livewire\Paymentdetails;
 use App\Livewire\Pickup;
 use App\Livewire\Product;
 use App\Livewire\Purchasehistory;
+use App\Livewire\Registermitra;
 use App\Livewire\Resetpassword;
 use App\Livewire\Settings;
 use App\Livewire\Toko;
@@ -32,11 +33,13 @@ Route::view('/aboutmitra', 'mitra.aboutmitra')->name('aboutmitra');
 Route::view('/contactmitra', 'mitra.contactmitra')->name('contactmitra');
 Route::view('/productmitra', 'mitra.productmitra')->name('productmitra');
 Route::get('/toko', Toko::class)->name('toko');
+Route::get('/securelogin', Loginkaryawan::class)->name('securelogin');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/register/{role?}', Register::class)->name('register');
-    Route::get('/securelogin', Loginkaryawan::class)->name('securelogin');
+    Route::get('/registermitra', Registermitra::class)->name('registermitra');
+
 
     // Meng-handle penyimpanan data registrasi
     // Route::post('/store', [Register::class, 'register'])->name('store');
@@ -52,9 +55,9 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     // Menampilkan halaman dashboard setelah login
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::get('/securelogin', Loginkaryawan::class)->name('securelogin');
     Route::get('/logout', [Login::class, 'logout'])->name('logout');
     Route::get('/settings', Settings::class)->name('settings'); 
-    Route::get('/resetpassword', Resetpassword::class)->name('resetpassword');
     Route::get('/cariayam', Cariayam::class)->name('cariayam');
     Route::get('/checkout', Checkout::class)->name('checkout');
     Route::get('/payment', Payment::class)->name('payment');
