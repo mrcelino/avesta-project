@@ -49,7 +49,7 @@
               </x-slot:trigger>
               <x-menu-item wire:navigate href="{{ route('purchasehistory') }}" class="hover:bg-pink hover:text-white active:bg-heading" title="Riwayat Pembelian" />
               <x-menu-item wire:navigate href="{{ route('settings') }}" class="hover:bg-pink hover:text-white active:bg-heading" title="Pengaturan" />
-              <x-menu-item class="hover:bg-pink hover:text-white active:bg-heading" title="Logout" />
+              <x-menu-item wire:navigate href="{{route('logout')}}" class="hover:bg-pink hover:text-white active:bg-heading" title="Logout" />
           </x-dropdown>
       </div>
   </div>
