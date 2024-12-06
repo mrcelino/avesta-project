@@ -8,10 +8,14 @@ use Carbon\Carbon;
 class PaymentMethod extends Component
 {
     public $selectedBank = null; // Untuk menyimpan bank yang dipilih
+    public $totalBelanja = 0; // Tambahkan properti untuk total belanja
 
     // Fungsi untuk menangani pembayaran dan mengirimkan bank yang dipilih
     public function pay()
     {
+        // Ambil total belanja dari session sebelumnya (yang dibuat di Checkout)
+        $this->totalBelanja = session('total_belanja', 0);
+
         // Simpan pilihan bank dan tanggal pembayaran di session
         session()->put('selectedBank', $this->selectedBank);
 
@@ -20,12 +24,29 @@ class PaymentMethod extends Component
 
         session()->put('paymentDate', $paymentDate);
 
-        // Redirect ke halaman paymentdetails
-        return redirect()->route('detailspayment');
+        // Simpan total belanja ke session dengan format rupiah
+        session()->put('totalBelanja', 'Rp. ' . number_format($this->totalBelanja, 0, ',', '.'));
+        $orderId = session('order_id');
+    
+        // Jika tidak ada order_id, redirect ke halaman sebelumnya
+        if (!$orderId) {
+            return redirect()->route('payment')->with('error', 'Order ID tidak ditemukan.');
+        }
+    
+        // Redirect ke detail payment dengan membawa order_id
+        return redirect()->route('detailspayment', ['order_id' => $orderId]);        
+    }
+
+    public function mount()
+    {
+        // Opsional: Ambil total belanja dari session saat komponen dimuat
+        $this->totalBelanja = session('total_belanja', 0);
     }
 
     public function render()
     {
-        return view('livewire.payment-method');
+        return view('livewire.payment-method', [
+            'totalBelanja' => $this->totalBelanja
+        ]);
     }
 }

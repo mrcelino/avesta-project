@@ -31,7 +31,9 @@ class Checkout extends Component
 
     public function loadKeranjang()
     {
-        $this->keranjangItems = Keranjang::where('id_user', Auth::id())->get();
+        $this->keranjangItems = Keranjang::where('id_user', Auth::id())
+        ->with(['unggas', 'unggas.warung']) // Eager loading relasi
+        ->get();
         $this->totalBelanja = 0;
         foreach ($this->keranjangItems as $item) {
             $this->jumlah[$item->id_keranjang] = $item->jumlah;
@@ -133,6 +135,60 @@ class Checkout extends Component
             session()->flash('error', 'Checkout gagal. Silakan coba lagi.');
         }
     }
+    public function konfirmasiBelanja()
+    {
+        // Siapkan data yang akan dikirim
+        $pesananItems = $this->keranjangItems->map(function ($item) {
+            return [
+                'id_keranjang' => $item->id_keranjang,
+                'id_unggas' => $item->id_unggas,
+                'jenis_unggas' => $item->unggas->jenis_unggas,
+                'nama_warung' => $item->unggas->warung->nama_warung,
+                'alamat_warung' => $item->unggas->warung->alamat_warung,
+                'harga_per_kg' => $item->unggas->harga_per_kg,
+                'jumlah' => $this->jumlah[$item->id_keranjang],
+                'catatan' => isset($this->catatan[$item->id_keranjang]) ? $this->catatan[$item->id_keranjang] : '',
+                'total_harga' => $item->unggas->harga_per_kg * $this->jumlah[$item->id_keranjang]
+            ];
+        });
+        
+        // Dapatkan user yang sedang login
+        $user = Auth::user();
+        // Ambil id_warung dari item pertama di keranjang
+        $idWarung = $this->keranjangItems[0]->unggas->warung->id_warung;
+        
+        // Gabungkan jenis unggas dari seluruh item di keranjang
+        $productNames = $this->keranjangItems->map(function ($item) {
+            return $item->unggas->jenis_unggas;
+        })->implode(', ');  // Gabungkan menjadi string yang dipisahkan koma
+        
+        // Buat order baru
+        $order = Order::create([
+            'id_user' => $user->id_user,
+            'id_warung' => $idWarung,
+            'product_name' => $productNames,  // Gunakan jenis unggas yang digabung
+            'jumlah_kg' => collect($this->jumlah)->sum(), 
+            'tanggal_order' => now(),
+            'catatan' => $this->catatan ? implode(', ', $this->catatan) : '',
+            'total_harga' => $this->totalBelanja,
+            'status_order' => 'processed', 
+            'foto_order' => 'uploads/fotos/chicken.png'
+        ]);
+        
+        // Hapus item dari keranjang
+        $this->keranjangItems->each(function ($item) {
+            $item->delete();
+        });
+        
+        // Simpan ke session atau database
+        session(['pesanan_items' => $pesananItems]);
+        session(['total_belanja' => $this->totalBelanja]);
+        session(['order_id' => $order->id_order]);
+        
+        // Redirect ke halaman payment
+        return redirect()->route('payment');
+    }
+    
 
     public function render()
     {

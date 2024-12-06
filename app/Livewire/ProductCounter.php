@@ -14,12 +14,14 @@ class ProductCounter extends Component
     public function increment()
     {
         $this->quantity++;
+        $this->dispatch('update-quantity', quantity: $this->quantity);
     }
-
+    
     public function decrement()
     {
         if ($this->quantity > 1) {
             $this->quantity--;
+            $this->dispatch('update-quantity', quantity: $this->quantity);
         }
     }
 

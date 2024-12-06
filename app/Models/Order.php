@@ -10,7 +10,7 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_user', 'tanggal_order', 'total_harga', 'status_order'
+        'id_user', 'tanggal_order', 'total_harga', 'status_order', 'product_name', 'catatan', 'jumlah_kg', 'id_warung', 'foto_order'
     ];
         // Accessor untuk is_completed
     public function getIsCompletedAttribute()

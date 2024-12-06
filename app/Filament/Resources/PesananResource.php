@@ -43,15 +43,18 @@ class PesananResource extends Resource
                     ->label('Foto')
                     ->url(fn ($record) => Storage::url($record->foto_order)),
                 
-                Tables\Columns\TextColumn::make('jenis_unggas')
+                Tables\Columns\TextColumn::make('product_name')
                     ->label('Nama'),
                 
                 Tables\Columns\TextColumn::make('total_harga')
                     ->label('Total Harga')
                     ->formatStateUsing(fn ($state) => 'Rp ' . number_format($state, 0, ',', '.')),
                 
-                Tables\Columns\TextColumn::make('stok')
-                    ->label('Jumlah Pesanan'),
+                Tables\Columns\TextColumn::make('jumlah_kg')
+                    ->label('Jumlah Pesanan (kg)'),
+                
+                Tables\Columns\TextColumn::make('catatan')
+                    ->label('Catatan'),
                 
                 Tables\Columns\TextColumn::make('tanggal_order')
                     ->label('Tanggal Pesanan')

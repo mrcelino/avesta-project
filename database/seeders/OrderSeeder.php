@@ -12,16 +12,38 @@ class OrderSeeder extends Seeder
         // Path gambar default
         $imagePath = 'uploads/fotos/chicken.png';
 
+        // Daftar produk
+        $produkList = [
+            'Ayam Utuh',
+            'Dada Ayam',
+            'Ceker Ayam',
+            'Sayap Ayam',
+            'Ayam Fillet',
+            'Jeroan Ayam',
+        ];
+
+        // Pilihan catatan
+        $catatanList = [
+            'Dipisahkan bagian sayap',
+            'Dipilih ayam segar',
+            'Dipacking rapih',
+            'Dipisah kulit dan daging',
+            'Dipisah tulang dan daging',
+            'Dipotong kecil-kecil',
+        ];
+
         // Contoh data untuk seeding
         $orders = [];
 
         for ($i = 1; $i <= 10; $i++) { // Seed 10 data contoh
             $orders[] = [
                 'id_order' => $i,
+                'product_name' => collect($produkList)->random(), // Pilih produk secara acak
+                'jumlah_kg' => rand(1, 10), // Jumlah kilogram acak 1-10
                 'tanggal_order' => now()->subDays(rand(1, 30)), // Tanggal acak dalam 30 hari terakhir
-                'catatan' => 'Catatan pesanan ' . $i,
+                'catatan' => collect($catatanList)->random(), // Pilih catatan secara acak
                 'total_harga' => rand(10000, 100000), // Harga acak
-                'status_order' => collect(['processed', 'completed', 'canceled'])->random(),
+                'status_order' => collect(['processed', 'completed', 'canceled'])->random(), // Status acak
                 'foto_order' => $imagePath, // Gambar tetap chicken.png
                 'created_at' => now(),
                 'updated_at' => now(),
