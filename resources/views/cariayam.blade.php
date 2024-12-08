@@ -32,13 +32,7 @@
                     @endforeach
                 </div>
                 <div class="join flex justify-center mt-14">
-                    @foreach(range(1, $products->lastPage()) as $page)
-                    <button class=" btn btn-lg glass rounded-2xl mx-2 {{ $page == $products->currentPage() ? 'text-white bg-pink rounded-full' : '' }}" 
-                    onclick="window.location.href='{{ $products->url($page) }}'"
-                    >
-                        {{ $page }}
-                    </button>
-                    @endforeach
+                    {{ $products->links('pagination') }} <!-- Ini akan menghasilkan tautan pagination -->
                 </div>
             </div>
         </main>

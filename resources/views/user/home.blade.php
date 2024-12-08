@@ -26,7 +26,7 @@
             <x-orderguide></x-orderguide>
             <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading text-center">Daftar Mitra Toko</h2>
             <x-brand></x-brand>
-            <h2 data-aos="fade-up" data-aos-duration="1000" class="font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading  text-center ">Testimoni</h2>
+            <h2 data-aos="fade-up" data-aos-duration="1000" class="hidden md:block font-extrabold text-3xl leading-[1.1] sm:text-3xl md:text-5xl my-20 text-heading  text-center ">Testimoni</h2>
             <div data-aos="zoom-in" data-aos-duration="1000">
               @livewire('testimonialscard')
             </div>

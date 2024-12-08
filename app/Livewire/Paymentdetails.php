@@ -39,6 +39,12 @@ class Paymentdetails extends Component
             $this->showModal = null; // Tidak ada modal yang ditampilkan
         }
     }
+    public function redirectToPickup()
+    {
+        // Redirect ke halaman pickup dengan menyertakan order_id
+        return redirect()->route('pickup', ['order_id' => $this->orderId]);
+    }
+
 
     public function render()
     {

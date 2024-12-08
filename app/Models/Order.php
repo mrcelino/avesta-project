@@ -40,4 +40,8 @@ class Order extends Model
     {
         return $this->hasMany(OrderItem::class);
     }
+    public function warung()
+    {
+        return $this->belongsTo(Warung::class, 'id_warung', 'id_warung');
+    }
 }

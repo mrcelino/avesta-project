@@ -6,12 +6,14 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use App\Models\Unggas;
 use Livewire\Attributes\On;
+use Livewire\WithPagination;
 use Livewire\Attributes\Url;
 use App\Models\Keranjang;
 
 
 class Cariayam extends Component
 {
+    use WithPagination;
     #[Url('q')]
     public $searchTerm = '';
 
@@ -47,10 +49,11 @@ class Cariayam extends Component
             'products' => $products,
         ]);
     }
-
+    
     public function updateSortBy($sortOption)
     {
         $this->sortBy = $sortOption;
+        $this->resetPage(); // Reset pagination saat mengubah sort
     }
 
     public $user;

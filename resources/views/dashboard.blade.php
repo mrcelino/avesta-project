@@ -86,8 +86,8 @@
                     </div>
                     <div class="flex flex-col items-center bg-white rounded-2xl border-2 shadow-md p-4 transition duration-300 hover:scale-110">
                         <a wire:navigate href="{{ route('cariayam', ['q'=>'Jeroan']) }}">
-                            <img src="{{ asset('image/ayam6.png') }}" alt="Chicken offal" class="w-24 h-24 mb-2">
-                            <p class="text-heading font-bold text-lg">Jeroan</p>
+                            <img src="{{ asset('image/ayam6.png') }}" alt="Chicken offal" class="w-24 h-24 mb-2 mx-auto">
+                            <p class="text-heading font-bold text-lg">Jeroan Ayam</p>
                         </a>
                     </div>
                 </div>

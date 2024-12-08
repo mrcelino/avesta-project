@@ -55,7 +55,7 @@
                     <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2">✕</button>
                   </form>
                   <h3 class="text-center text-3xl font-bold text-white mb-4">Pembayaran <br>Tertunda</h3>
-                  <img class="px-12 py-8 flex justify-center" src="{{ asset('image/success.png') }}">
+                  <img class="px-12 py-8 flex justify-center mx-auto" src="{{ asset('image/gagal.png') }}">
                 </div>
             </dialog>
             @endif
@@ -71,14 +71,15 @@
                     modal.addEventListener('close', function () {
                         setTimeout(function () {
                             // Redirect setelah 5 detik
-                            window.location.href = '{{ route('pickup') }}';
-                        }, 5000); // Ubah menjadi 5000ms untuk 5 detik
+                            window.location.href = '{{ route('pickup') }}?order_id={{ $orderId }}';
+                        }, 3000); // Ubah menjadi 5000ms untuk 5 detik
                     });
 
                     // Tutup modal secara otomatis setelah 5 detik
                     setTimeout(function() {
                         modal.close();
-                    }, 5000); // 5 detik setelah modal terbuka
+                        @this.redirectToPickup(); // Panggil method Livewire
+                    }, 3000); // 5 detik setelah modal terbuka
                 });
             </script>
             @endif
@@ -97,7 +98,7 @@
                         1. Masukkan kartu ATM anda dan masukkan PIN anda<br>
                         2. Pilih BAYAR/BELI > MULTI PAYMENT<br>
                         3. MASUKKAN kode perusahaan Avesta: 12345<br>
-                        4. Masukkan Nomor Akun Virtual: 88998762134972432<br>
+                        4. Masukkan Nomor Akun Virtual: {{ rand(1000000000000000, 9999999999999999) }}<br>
                         5. Masukkan Total Belanja<br>
                         6. Untuk konfirmasi: Pilih 1 lalu OK<br>
                         7. Transaksi selesai
@@ -106,16 +107,16 @@
             </x-collapse>
             <x-collapse class="mb-4">
                 <x-slot:heading>
-                    <h2 class="text-base">Aplikasi</h2>
+                    <h2 class="text-base">Mobile Banking</h2>
                 </x-slot:heading>
                 <x-slot:content>
-                    1. Masukkan kartu ATM anda dan masukkan PIN anda<br>
-                    2. Pilih BAYAR/BELI > MULTI PAYMENT<br>
-                    3. MASUKKAN kode perusahaan Avesta: 12345<br>
-                    4. Masukkan Nomor Akun Virtual: 88998762134972432<br>
-                    5. Masukkan Total Belanja<br>
-                    6. Untuk konfirmasi: Pilih 1 lalu OK<br>
-                    7. Transaksi selesai
+                    1. Buka aplikasi Mobile Banking Anda dan login.<br>
+                    2. Pilih menu Transfer.<br>
+                    3. Pilih opsi Transfer ke Virtual Account.<br>
+                    4. Masukkan nomor Virtual Account yang diberikan.<br>
+                    5. Masukkan jumlah pembayaran sesuai tagihan.<br>
+                    6. Konfirmasi detail pembayaran, lalu selesaikan transaksi.<br>
+                    7. Simpan bukti transaksi yang ditampilkan di aplikasi.
                 </x-slot:content>
             </x-collapse>
             <x-collapse class="mb-4">
@@ -123,13 +124,13 @@
                     <h2 class="text-base">Internet Banking</h2>
                 </x-slot:heading>
                 <x-slot:content>
-                     1. Masukkan kartu ATM anda dan masukkan PIN anda<br>
-                    2. Pilih BAYAR/BELI > MULTI PAYMENT<br>
-                    3. MASUKKAN kode perusahaan Avesta: 12345<br>
-                    4. Masukkan Nomor Akun Virtual: 88998762134972432<br>
-                    5. Masukkan Total Belanja<br>
-                    6. Untuk konfirmasi: Pilih 1 lalu OK<br>
-                    7. Transaksi selesai
+                    1. Login ke akun Internet Banking Anda melalui browser.<br>
+                    2. Pilih menu Transfer atau Bayar Tagihan.<br>
+                    3. Pilih Transfer ke Virtual Account.<br>
+                    4. Masukkan nomor Virtual Account yang diberikan.<br>
+                    5. Masukkan nominal pembayaran sesuai tagihan.<br>
+                    6. Periksa dan konfirmasi detail pembayaran.<br>
+                    7. Simpan atau cetak bukti transaksi yang muncul.
                 </x-slot:content>
             </x-collapse>
             <x-collapse class="mb-4">
@@ -137,13 +138,11 @@
                     <h2 class="text-base">Teller {{ session('selectedBank') }}</h2>
                 </x-slot:heading>
                 <x-slot:content>
-                    1. Masukkan kartu ATM anda dan masukkan PIN anda<br>
-                    2. Pilih BAYAR/BELI > MULTI PAYMENT<br>
-                    3. MASUKKAN kode perusahaan Avesta: 12345<br>
-                    4. Masukkan Nomor Akun Virtual: 88998762134972432<br>
-                    5. Masukkan Total Belanja<br>
-                    6. Untuk konfirmasi: Pilih 1 lalu OK<br>
-                    7. Transaksi selesai
+                    1. Kunjungi cabang bank terdekat.<br>
+                    2. Isi formulir setoran/transfer dengan mencantumkan nomor Virtual Account yang diberikan.<br>
+                    3. Serahkan formulir kepada teller bersama uang pembayaran.<br>
+                    4. Teller akan memproses transaksi.<br>
+                    5. Terima bukti pembayaran dari teller sebagai konfirmasi pembayaran.
                 </x-slot:content>
             </x-collapse>
         </section>

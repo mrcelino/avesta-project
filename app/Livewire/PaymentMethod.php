@@ -20,7 +20,7 @@ class PaymentMethod extends Component
         session()->put('selectedBank', $this->selectedBank);
 
         // Set zona waktu Indonesia dan simpan waktu pembayaran dengan zona waktu tersebut
-        $paymentDate = Carbon::now('Asia/Jakarta')->translatedFormat('l, d F Y H.i');
+        $paymentDate = Carbon::now('Asia/Jakarta')->addMinutes(20)->translatedFormat('l, d F Y H.i');
 
         session()->put('paymentDate', $paymentDate);
 

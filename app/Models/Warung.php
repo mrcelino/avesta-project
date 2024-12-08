@@ -23,7 +23,10 @@ class Warung extends Model
         'foto_warung',
     ];
     
-
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'id_warung', 'id');
+    }
     
     public function unggas()
     {

@@ -39,7 +39,7 @@ class ProdukSeeder extends Seeder
         // Mengambil data dari tabel `warung`
         $warungs = DB::table('warung')->select('id_warung', 'nama_warung')->get();
 
-        foreach (range(1, 12) as $index) {
+        foreach (range(1, 24) as $index) {
             $produk = array_rand($produkList); // Memilih produk secara acak
 
             DB::table('unggas')->insert([
