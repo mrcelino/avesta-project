@@ -36,9 +36,16 @@
             </svg>                        
             </x-button>
           <x-dropdown>
-              <div class="border-pink border-2 rounded-xl mt-2 mb-2 p-2">
-                  <p class="font-semibold text-lg text-pink">{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}</p>
-                  <p class="text-base text-pink">{{ Auth::user()->email }}</p>
+              <div class="flex flex-row items-center justify-center gap-4 border-2 rounded-xl mt-2 mb-2 p-2">
+                  <div class="rounded-full size-12 bg-gray-200">
+                  </div>
+                  <div class="flex-col space-y-1">
+                    <p class="font-semibold text-lg">{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}</p>
+                    <div class="flex flex-row items-center gap-2">
+                        <img src="{{ asset('image/coin.svg') }}" alt="Coin Icon" class="size-5 object-cover"/>
+                        <p class="text-base">IDR 0,00</p>
+                    </div>
+                  </div>
               </div>
               <x-slot:trigger>
                   <x-button class="ml-5 btn-circle btn-outline bg-white stroke-none border-2 hover:bg-white border-white hover:border-white">
@@ -47,9 +54,12 @@
                       </svg>                     
                   </x-button>
               </x-slot:trigger>
-              <x-menu-item wire:navigate href="{{ route('purchasehistory') }}" class="hover:bg-pink hover:text-white active:bg-heading" title="Riwayat Pembelian" />
-              <x-menu-item wire:navigate href="{{ route('settings') }}" class="hover:bg-pink hover:text-white active:bg-heading" title="Pengaturan" />
-              <x-menu-item wire:navigate href="{{route('logout')}}" class="hover:bg-pink hover:text-white active:bg-heading" title="Logout" />
+              <x-menu-item wire:navigate href="{{ route('purchasehistory') }}" class="hover:bg-pink hover:text-white active:bg-heading font-semibold" title="Riwayat Pembelian" />
+              <x-menu-item wire:navigate href="{{ route('settings') }}" class="hover:bg-pink hover:text-white active:bg-heading font-semibold" title="Pengaturan" />
+              <div class="flex flex-row items-center justify-between pr-2 hover:bg-pink hover:text-white active:bg-heading rounded-md hover:cursor-pointer">
+                    <x-menu-item wire:navigate href="{{ route('logout') }}" class="hover:bg-pink font-semibold" title="Keluar" />
+                    <img src="{{ asset('image/logout.svg') }}" alt="Coin Icon" class="size-4 object-cover"/>
+              </div>
           </x-dropdown>
       </div>
   </div>
