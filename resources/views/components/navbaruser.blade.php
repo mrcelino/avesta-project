@@ -21,14 +21,7 @@
       <div class="navbar-end">
             <div class="flex items-center bg-white rounded-full text-pink px-4">
                 <img src="{{ asset('image/pin2.png') }}" alt="Location Icon" class="h-6 w-6"/>
-                <select class="select rounded-full text-pink bg-white font-semibold text-lg max-w-xs no-active-effect">
-                    <option class="font-semibold">Pogung Baru</option>
-                    <option class="font-semibold">Sendangadi</option>
-                    <option class="font-semibold">Sinduadi</option>
-                    <option class="font-semibold">Sumberadi</option>
-                    <option class="font-semibold">Tirtoadi</option>
-                    <option class="font-semibold">Tlogoadi</option>
-                </select>
+                <livewire:custom-dropdown />
             </div>
           <x-button wire:navigate href="{{ route('checkout') }}" class="ml-4 btn-circle bg-white stroke-none hover:bg-white">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 text-pink">
