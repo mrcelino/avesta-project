@@ -6,6 +6,11 @@
 /* .mary-table-pagination span[aria-current="page"] > span {
     @apply bg-primary text-base-100
 } */
+.menu.bg-base-100 {
+  background-color: white !important;
+  @apply border shadow-lg
+}
+
 
 /* Table pagination: for dark mode*/
 /* .mary-table-pagination span[aria-disabled="true"] span {
